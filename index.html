@@ -1,69 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Web Developer</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; scroll-behavior: smooth; }
-        .hero { text-align: center; padding: 80px 20px; }
-        .btn { margin-top: 20px; padding: 12px 25px; background: white; color: #333; border-radius: 8px; text-decoration: none; display: inline-block; }
-        .section { background: white; color: #333; padding: 50px 20px; text-align: center; }
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; scroll-behavior: smooth; }
+        .hero { text-align: center; padding: 100px 20px; }
+        .btn { margin-top: 20px; padding: 12px 25px; background: white; color: #333; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: bold; }
+        .section { background: white; color: #333; padding: 60px 20px; text-align: center; }
         .projects { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        .card { background: #f1f2f6; padding: 20px; border-radius: 10px; width: 260px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card img { width: 100%; border-radius: 8px; margin-bottom: 10px; height: 150px; object-fit: cover; }
+        .card { background: #f1f2f6; padding: 20px; border-radius: 10px; width: 280px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; border-radius: 8px; margin-bottom: 10px; height: 160px; object-fit: cover; }
         .btn-project { display: inline-block; margin-top: 10px; padding: 8px 15px; background: #764ba2; color: white; text-decoration: none; border-radius: 5px; font-size: 13px; }
         .btn-project:hover { background: #667eea; }
-        #infoBtn { position: fixed; bottom: 20px; right: 20px; border-radius: 50%; width: 50px; height: 50px; border: none; background: #764ba2; color: white; font-size: 20px; cursor: pointer; }
-        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
-        .modal-content { background: white; color: #333; margin: 15% auto; padding: 20px; width: 300px; border-radius: 10px; position: relative; }
-        .close { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; }
+        #infoBtn { position: fixed; bottom: 20px; right: 20px; border-radius: 50%; width: 55px; height: 55px; border: none; background: #764ba2; color: white; font-size: 24px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .modal-content { background: white; color: #333; margin: 10% auto; padding: 30px; width: 320px; border-radius: 15px; position: relative; text-align: left; }
+        .close { position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #aaa; }
+        .tech-tag { display: inline-block; padding: 5px 10px; background: #eee; border-radius: 15px; font-size: 12px; margin: 2px; color: #555; }
     </style>
 </head>
 <body>
 
 <div class="hero">
     <h1>Fábio 👨‍💻</h1>
-    <p>Aspiring Web Developer</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <p style="font-size: 1.2rem; opacity: 0.9;">IT Student & Aspiring Web Developer</p>
+    <a href="#projects" class="btn">View My Work</a>
 </div>
 
 <div class="section">
     <h2>About Me</h2>
-    <p style="max-width: 800px; margin: auto;">
-        Experienced educator transitioning into Web Development. Strong background in communication, leadership and problem-solving.
+    <p style="max-width: 800px; margin: auto; line-height: 1.6; font-size: 1.1rem;">
+        Experienced Educator and Project Manager transitioning into <strong>Information Technology</strong>. 
+        Currently mastering <strong>HTML5, CSS3, and JavaScript</strong> to build impactful web solutions while leveraging 20+ years of leadership expertise.
     </p>
 </div>
 
-<div class="section" id="projects">
-    <h2>Projects</h2>
+<div class="section" id="projects" style="background: #f9f9f9;">
+    <h2>Projects & Profile</h2>
     <div class="projects">
-        <!-- CARD 1 -->
+        
+        <!-- CARD 1: CURRICULUM -->
         <div class="card">
-            <img src="https://via.placeholder.com/300x180" alt="Project preview">
+            <img src="https://unsplash.com" alt="Resume icon">
+            <h3>Professional Resume</h3>
+            <p>Complete background in English, focused on tech transition.</p>
+            <span class="tech-tag">PDF</span> <span class="tech-tag">English</span>
+            <br>
+            <!-- AQUI ESTÁ O SEU ARQUIVO -->
+            <a href="curriculo.pdf" target="_blank" class="btn-project">📄 Open Curriculum</a>
+        </div>
+
+        <!-- CARD 2: TO-DO APP -->
+        <div class="card">
+            <img src="https://unsplash.com" alt="App preview">
             <h3>To-Do List App</h3>
-            <p>Interactive task manager with dynamic JavaScript features.</p>
-            <p style="font-size: 14px; opacity: 0.7;"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <p>Interactive task manager built during my freeCodeCamp journey.</p>
+            <span class="tech-tag">HTML</span> <span class="tech-tag">CSS</span> <span class="tech-tag">JS</span>
+            <br>
             <a href="#" class="btn-project">🔗 Live Demo</a>
             <a href="#" class="btn-project">💻 Code</a>
         </div>
 
-        <!-- CARD 2 -->
+        <!-- CARD 3: PORTFOLIO -->
         <div class="card">
-            <img src="https://via.placeholder.com/300x180" alt="Project preview">
-            <h3>Professional Profile</h3>
-            <p>My academic background and professional experience.</p>
-            <p style="font-size: 14px; opacity: 0.7;"><strong>Tech:</strong> HTML, PDF</p>
-            <a href="resume.pdf" target="_blank" class="btn-project">📄 Open Resume</a>
+            <img src="https://unsplash.com" alt="Portfolio preview">
+            <h3>Web Portfolio</h3>
+            <p>This responsive website, showcasing my coding progress.</p>
+            <span class="tech-tag">Responsive</span> <span class="tech-tag">GitHub Pages</span>
         </div>
 
-        <!-- CARD 3 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/300x180" alt="Portfolio preview">
-            <h3>Portfolio Website</h3>
-            <p>Responsive personal website built with HTML & CSS.</p>
-            <p style="font-size: 14px; opacity: 0.7;"><strong>Tech:</strong> HTML, CSS</p>
-        </div>
     </div>
 </div>
 
@@ -72,9 +80,12 @@
 <div id="infoModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Project Info</h2>
-        <p><strong>Goal:</strong> Transition to Web Development</p>
-        <p><strong>Target:</strong> Europe opportunities</p>
+        <h2 style="margin-top:0;">Career Goal</h2>
+        <p><strong>Status:</strong> Career Changer (Education to IT)</p>
+        <p><strong>Primary Focus:</strong> Front-end Development</p>
+        <p><strong>Target:</strong> International opportunities (Europe)</p>
+        <hr>
+        <p style="font-size: 13px; color: #666;">"The best way to predict the future is to create it."</p>
     </div>
 </div>
 
@@ -83,10 +94,15 @@
     const btn = document.getElementById("infoBtn");
     const span = document.querySelector(".close");
 
+    // Abre o modal
     btn.onclick = () => modal.style.display = "block";
+
+    // Fecha no 'X'
     span.onclick = () => modal.style.display = "none";
+
+    // Fecha se clicar fora do modal
     window.onclick = (event) => {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
     }
