@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábio | Web Developer Portfolio</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #764ba2; color: white; text-align: center; }
+        .container { padding: 40px 20px; }
+        .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .card { background: white; color: #333; padding: 25px; border-radius: 12px; width: 250px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .btn { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; }
+        img { width: 50px; height: 50px; margin-bottom: 15px; object-fit: contain; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .about-text { max-width: 650px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fábio 👨‍💻</h1>
+        <p class="about-text">IT Student & Aspiring Web Developer | Transitioning from 20+ years of Leadership and Education to Technology.</p>
+        
+        <div class="card-area">
+            <!-- CARD 1: RESUME -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Resume">
+                <h3>My Resume</h3>
+                <p>Complete professional background in English.</p>
+                <a href="resume.pdf" target="_blank" class="btn">Open PDF</a>
+            </div>
+            
+            <!-- CARD 2: TASK MASTER -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Tasks">
+                <h3>Task Master</h3>
+                <p>Interactive To-Do List with JavaScript logic.</p>
+                <a href="todo.html" class="btn">Live Demo</a>
+            </div>
+
+            <!-- CARD 3: FINANCE TRACKER -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Finance">
+                <h3>Finance Tracker</h3>
+                <p>Smart balance calculator with color logic.</p>
+                <a href="finance.html" class="btn">Live Demo</a>
+            </div>
+
+            <!-- CARD 4: CURRENCY CONVERTER -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Converter">
+                <h3>Converter</h3>
+                <p>EUR to BRL currency conversion tool.</p>
+                <a href="converter.html" class="btn">Live Demo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
