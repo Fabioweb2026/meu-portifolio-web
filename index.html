@@ -23,13 +23,6 @@
             color: #333;
             border-radius: 8px;
             text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #eee;
-            transform: translateY(-2px);
         }
 
         .section {
@@ -50,7 +43,13 @@
             background: #f1f2f6;
             padding: 20px;
             border-radius: 10px;
-            width: 250px;
+            width: 260px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         .btn-project {
@@ -62,19 +61,16 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
-            transition: 0.3s;
         }
 
         .btn-project:hover {
             background: #667eea;
         }
 
-        /* BOTÃO INFO */
         #infoBtn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            cursor: pointer;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -82,20 +78,14 @@
             background: #764ba2;
             color: white;
             font-size: 20px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        /* MODAL */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.6);
         }
 
         .modal-content {
@@ -105,109 +95,109 @@
             padding: 20px;
             width: 300px;
             border-radius: 10px;
-            text-align: left;
         }
 
         .close {
             float: right;
             cursor: pointer;
-            font-size: 20px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="hero">
-        <h1>Fábio 👨‍💻</h1>
-        <p>Aspiring Web Developer</p>
-        <a href="#projects" class="btn">View Projects</a>
-    </div>
+<div class="hero">
+    <h1>Fábio 👨‍💻</h1>
+    <p>Aspiring Web Developer</p>
+    <a href="#projects" class="btn">View Projects</a>
+</div>
 
-    <div class="section">
-        <h2>About Me</h2>
-        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-            I am a Portuguese and English Language Teacher with over 27 years of experience. 
-            Currently transitioning into Web Development, focusing on HTML, CSS and JavaScript.
-        </p>
-    </div>
-
-    <div class="section" id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects">
-
-            <div class="card">
-             <div class="card">
-   <div class="card">
-    <h3>To-Do List App</h3>
-
-    <p>Task management app built with JavaScript.</p>
-
-    <!-- 👉 COLE EXATAMENTE AQUI -->
-    <p style="font-size: 14px; opacity: 0.7;">
-        <strong>Tech:</strong> HTML, CSS, JavaScript
+<div class="section">
+    <h2>About Me</h2>
+    <p style="max-width: 800px; margin: auto;">
+        Experienced educator transitioning into Web Development.
+        Strong background in communication, leadership and problem-solving.
     </p>
-
-    <a href="#" class="btn-project">Live Demo</a>
-    <a href="#" class="btn-project">View Code</a>
 </div>
-    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
 
-    <a href="#" class="btn-project">Live Demo</a>
-    <a href="#" class="btn-project">View Code</a>
+<div class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x180" alt="Project preview">
+
+            <h3>To-Do List App</h3>
+
+            <p>Interactive task manager with dynamic JavaScript features.</p>
+
+            <p style="font-size: 14px; opacity: 0.7;">
+                <strong>Tech:</strong> HTML, CSS, JavaScript
+            </p>
+
+            <a href="#" class="btn-project">🔗 Live Demo</a>
+            <a href="#" class="btn-project">💻 Code</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x180" alt="Resume preview">
+
+            <h3>Professional Profile</h3>
+
+            <p>My academic background and professional experience.</p>
+
+            <p style="font-size: 14px; opacity: 0.7;">
+                <strong>Tech:</strong> HTML, PDF
+            </p>
+
+            <a href="resume.pdf" target="_blank" class="btn-project">📄 Open Resume</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x180" alt="Portfolio preview">
+
+            <h3>Portfolio Website</h3>
+
+            <p>Responsive personal website built with HTML & CSS.</p>
+
+            <p style="font-size: 14px; opacity: 0.7;">
+                <strong>Tech:</strong> HTML, CSS
+            </p>
+        </div>
+
+    </div>
 </div>
-                <p>Task management app built with JavaScript.</p>
-                <a href="https://seu-projeto.netlify.app" target="_blank" class="btn-project">Live Demo</a>
 
-<a href="https://github.com/seuusuario/todo-app" target="_blank" class="btn-project">View Code</a>
-            </div>
+<button id="infoBtn">?</button>
 
-            <div class="card">
-
-                ] 
-                <a href="resume.pdf" target="_blank" class="btn-project">Open Resume</a>
-                <a href="#" class="btn-project">🔗 Live Demo</a>
-<a href="#" class="btn-project">💻 Code</a>
-            </div>
-
-            <div class="card">
-                <h3>Portfolio Website</h3>
-                <p>My personal website built with HTML & CSS.</p>
-            </div>
-
-        </div>
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Project Info</h2>
+        <p><strong>Goal:</strong> Transition to Web Development</p>
+        <p><strong>Target:</strong> Europe opportunities</p>
     </div>
+</div>
 
-    <!-- BOTÃO -->
-    <button id="infoBtn">?</button>
+<script>
+    const modal = document.getElementById("infoModal");
+    const btn = document.getElementById("infoBtn");
+    const span = document.querySelector(".close");
 
-    <!-- MODAL -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 style="color: #764ba2;">Project Info</h2>
-            <hr>
-            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
-            <p><strong>Goal:</strong> Transition to tech career</p>
-            <p><strong>Target:</strong> Malta & Spain</p>
-        </div>
-    </div>
+    btn.onclick = () => modal.style.display = "block";
+    span.onclick = () => modal.style.display = "none";
 
-    <script>
-        const modal = document.getElementById("infoModal");
-        const btn = document.getElementById("infoBtn");
-        const span = document.querySelector(".close");
-
-        btn.onclick = () => modal.style.display = "block";
-        span.onclick = () => modal.style.display = "none";
-
-        window.onclick = (event) => {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
+
