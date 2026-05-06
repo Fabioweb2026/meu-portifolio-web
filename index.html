@@ -5,153 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Web Developer</title>
     <style>
-        /* CONFIGURAÇÃO GERAL */
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; scroll-behavior: smooth; overflow-x: hidden; }
-        
-        .hero { text-align: center; padding: 80px 20px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        
-        .btn { margin-top: 20px; padding: 12px 25px; background: white; color: #333; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: bold; }
-
-        .section { background: white; color: #333; padding: 60px 20px; text-align: center; }
-
-        /* AJUSTE DOS CARDS (Onde estava o erro) */
-        .projects { 
-            display: flex; 
-            justify-content: center; 
-            gap: 20px; 
-            flex-wrap: wrap; 
-            margin-top: 30px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .card { 
-            background: #f8f9fa; 
-            padding: 20px; 
-            border-radius: 12px; 
-            width: 280px; /* Largura fixa para não desconfigurar */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* FORÇAR TAMANHO DAS IMAGENS */
-        .card img { 
-            width: 80px;  /* Tamanho de ícone para ficar organizado */
-            height: 80px; 
-            object-fit: contain; 
-            margin-bottom: 15px;
-        }
-
-        .card h3 { margin: 10px 0; font-size: 1.2rem; }
-        .card p { font-size: 0.9rem; color: #666; height: 50px; } /* Altura fixa para o texto */
-
-        .tech-tag { display: inline-block; padding: 4px 8px; background: #e9ecef; border-radius: 4px; font-size: 11px; margin: 2px; color: #495057; font-weight: bold; }
-
-        .btn-project { 
-            display: block; 
-            width: 90%;
-            margin-top: 10px; 
-            padding: 10px; 
-            background: #764ba2; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        /* MODAL E BOTÃO FLUTUANTE */
-        #infoBtn { position: fixed; bottom: 20px; right: 20px; border-radius: 50%; width: 50px; height: 50px; border: none; background: #764ba2; color: white; font-size: 20px; cursor: pointer; z-index: 100; }
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-        .modal-content { background: white; color: #333; margin: 15% auto; padding: 25px; width: 300px; border-radius: 12px; position: relative; }
-        .close { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; }
+        body { margin: 0; font-family: sans-serif; background: #764ba2; color: white; text-align: center; }
+        .container { padding: 50px 20px; }
+        .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .card { background: white; color: #333; padding: 20px; border-radius: 10px; width: 250px; }
+        .btn { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        img { width: 60px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-
-<div class="hero">
-    <h1>Fábio 👨‍💻</h1>
-    <p>IT Student & Aspiring Web Developer</p>
-    <a href="#projects" class="btn">View Projects</a>
-</div>
-
-<div class="section">
-    <h2>About Me</h2>
-    <p style="max-width: 700px; margin: auto; line-height: 1.6;">
-        Experienced educator transitioning into Web Development. Strong background in communication, leadership and problem-solving.
-    </p>
-</div>
-
-<div class="section" id="projects" style="background: #f1f2f6;">
-    <h2>Projects & Profile</h2>
-    <div class="projects">
+    <div class="container">
+        <h1>Fábio 👨‍💻</h1>
+        <p>IT Student & Aspiring Web Developer</p>
         
-        <!-- CARD 1 -->
-        <div class="card">
-            <img src="https://flaticon.com" alt="Resume">
-            <h3>Professional Resume</h3>
-            <p>Complete background in English, focused on tech transition.</p>
-            <div>
-                <span class="tech-tag">PDF</span>
-                <span class="tech-tag">English</span>
+        <div class="card-area">
+            <div class="card">
+                <img src="https://flaticon.com" alt="Resume">
+                <h3>Resume</h3>
+                <p>Professional background in English.</p>
+                <a href="resume.pdf" target="_blank" class="btn">Open PDF</a>
             </div>
-            <a href="resume.pdf" target="_blank" class="btn-project">📄 Open Resume</a>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-            <img src="https://flaticon.com" alt="To-Do">
-            <h3>To-Do List App</h3>
-            <p>Interactive task manager built during my freeCodeCamp journey.</p>
-            <div>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JS</span>
+            
+            <div class="card">
+                <img src="https://flaticon.com" alt="GitHub">
+                <h3>GitHub</h3>
+                <p>My code repositories.</p>
+                <a href="https://github.com" target="_blank" class="btn">View Profile</a>
             </div>
-            <a href="#" class="btn-project">🔗 Live Demo</a>
         </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-            <img src="https://flaticon.com" alt="Portfolio">
-            <h3>Web Portfolio</h3>
-            <p>This responsive website, showcasing my coding progress.</p>
-            <div>
-                <span class="tech-tag">Responsive</span>
-                <span class="tech-tag">GitHub</span>
-            </div>
-            <a href="https://github.com" target="_blank" class="btn-project">💻 My GitHub</a>
-        </div>
-
     </div>
-</div>
-
-<button id="infoBtn">?</button>
-
-<div id="infoModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Project Info</h3>
-        <p><strong>Goal:</strong> Transition to Web Development</p>
-        <p><strong>Target:</strong> Europe opportunities</p>
-    </div>
-</div>
-
-<script>
-    const modal = document.getElementById("infoModal");
-    const btn = document.getElementById("infoBtn");
-    const span = document.querySelector(".close");
-    btn.onclick = () => modal.style.display = "block";
-    span.onclick = () => modal.style.display = "none";
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
-</script>
-
 </body>
 </html>
+
 
 
 
