@@ -7,13 +7,23 @@
     <link rel="icon" href="https://cloudflare.com">
     <style>
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid rgba(255, 255, 255, 0.3); margin-bottom: 15px; object-fit: cover; box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .container { padding: 40px 20px; width: 100%; max-width: 1100px; }
+        
+        .profile-img { 
+            width: 150px; height: 150px; border-radius: 50%; 
+            border: 5px solid rgba(255, 255, 255, 0.3); 
+            margin-bottom: 20px; object-fit: cover; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: 0.3s; 
+        }
         .profile-img:hover { transform: scale(1.05); border-color: white; }
-        h1 { font-size: 2.8rem; margin: 10px 0; }
-        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-        .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1100px; }
+
+        h1 { font-size: 2.8rem; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
+        
+        .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .card { background: white; color: #333; padding: 25px; border-radius: 15px; width: 200px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; text-decoration: none; display: flex; flex-direction: column; align-items: center; }
         .card:hover { transform: translateY(-10px); }
+        
         .icon-box { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 20px; }
         .bg-blue { background: #e3f2fd; color: #1976d2; }
         .bg-red { background: #ffebee; color: #c62828; }
@@ -24,12 +34,11 @@
     </style>
 </head>
 <body>
-   <body>
+
     <div class="container">
-        <!-- A foto deve ficar dentro do container para ser centralizada -->
+        <!-- CHAMADA DA FOTO - CERTIFIQUE-SE QUE NO GITHUB O NOME É foto.jpg -->
         <img src="foto.jpg" alt="Fábio" class="profile-img">
 
-        <!-- Título corrigido sem o código de erro do emoji -->
         <h1>Fábio 👨‍💻</h1>
         <p class="subtitle">IT Student & Aspiring Web Developer</p>
 
@@ -40,28 +49,24 @@
                 <p style="font-size: 14px;">Background in English.</p>
                 <span class="btn">Open PDF</span>
             </a>
-            
             <a href="structure.html" class="card">
                 <div class="icon-box bg-red">🏢</div>
                 <h3>Org Tool</h3>
                 <p style="font-size: 14px;">Sectors explorer.</p>
                 <span class="btn">View Tool</span>
             </a>
-
             <a href="finance.html" class="card">
                 <div class="icon-box bg-green">💰</div>
                 <h3>Finance</h3>
                 <p style="font-size: 14px;">Balance calculator.</p>
                 <span class="btn">Live Demo</span>
             </a>
-
             <a href="malta.html" class="card">
                 <div class="icon-box bg-orange">🇲🇹</div>
                 <h3>Malta Guide</h3>
                 <p style="font-size: 14px;">Tourism & tips.</p>
                 <span class="btn">View Guide</span>
             </a>
-
             <a href="converter.html" class="card">
                 <div class="icon-box bg-purple">💱</div>
                 <h3>Converter</h3>
@@ -69,40 +74,7 @@
                 <span class="btn">Live Demo</span>
             </a>
         </div>
-    </div> <!-- Fim do container -->
-</body>
-
-    <div class="card-area">
-        <a href="resume.pdf" target="_blank" class="card">
-            <div class="icon-box bg-blue">📄</div>
-            <h3>Resume</h3>
-            <p style="font-size: 14px;">Background in English.</p>
-            <span class="btn">Open PDF</span>
-        </a>
-        <a href="structure.html" class="card">
-            <div class="icon-box bg-red">🏢</div>
-            <h3>Org Tool</h3>
-            <p style="font-size: 14px;">Sectors explorer.</p>
-            <span class="btn">View Tool</span>
-        </a>
-        <a href="finance.html" class="card">
-            <div class="icon-box bg-green">💰</div>
-            <h3>Finance</h3>
-            <p style="font-size: 14px;">Balance calculator.</p>
-            <span class="btn">Live Demo</span>
-        </a>
-        <a href="malta.html" class="card">
-            <div class="icon-box bg-orange">🇲🇹</div>
-            <h3>Malta Guide</h3>
-            <p style="font-size: 14px;">Tourism & tips.</p>
-            <span class="btn">View Guide</span>
-        </a>
-        <a href="converter.html" class="card">
-            <div class="icon-box bg-purple">💱</div>
-            <h3>Converter</h3>
-            <p style="font-size: 14px;">EUR to BRL tool.</p>
-            <span class="btn">Live Demo</span>
-        </a>
     </div>
+
 </body>
 </html>
