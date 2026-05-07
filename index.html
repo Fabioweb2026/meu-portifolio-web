@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Portfolio</title>
     <style>
-        /* RESET E FONTES */
         *{ margin:0; padding:0; box-sizing:border-box; }
         
         body{
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: #f8fafc;
             color:#1e293b;
             min-height:100vh;
-            line-height: 1.5;
         }
 
-        /* CAPA DO PORTFÓLIO PROFISSIONAL */
+        /* CAPA LIMPA E PROFISSIONAL */
         .hero-header {
             width: 100%;
-            height: 420px;
-            /* Ajuste de enquadramento em 25% para focar no rosto */
-            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8)), 
+            height: 450px;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.85)), 
                         url('foto.fabio1.jpg') no-repeat center 25%;
             background-size: cover;
             display: flex;
@@ -33,100 +30,74 @@
             padding: 20px;
         }
 
-        /* CONTAINER DOS CARDS */
         .container{
             width:100%;
             max-width:1200px;
-            margin: -70px auto 60px;
+            margin: -80px auto 60px;
             padding: 0 20px;
         }
 
-        /* AVATAR COM BRILHO */
-        .profile-avatar{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid #ffffff;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .profile-avatar:hover { transform: scale(1.05); }
-
+        /* DESTAQUE PARA O NOME E TÍTULO */
         h1{
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -0.025em;
-            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            letter-spacing: -0.05em;
         }
 
         .subtitle{
-            font-size: 1.25rem;
-            color: #e2e8f0;
-            font-weight: 400;
-            max-width: 600px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: 1.6rem; /* Aumentado para destacar */
+            color: #6366f1; /* Cor de destaque (índigo moderno) */
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            display: inline-block;
         }
 
         /* GRID DE CARDS */
         .card-area{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            justify-content: center;
+            gap: 25px;
         }
 
         .card{
             background: #ffffff;
-            padding: 32px 24px;
+            padding: 35px 25px;
             border-radius: 24px;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-decoration:none;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
             border: 1px solid #e2e8f0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .card:hover{
             transform: translateY(-12px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.15);
             border-color: #6366f1;
         }
 
         .icon-box{
-            width: 64px; height: 64px;
-            border-radius: 20px;
+            width: 60px; height: 60px;
+            border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px; font-size: 28px;
-            transition: transform 0.3s ease;
+            margin-bottom: 20px; font-size: 30px;
         }
-        .card:hover .icon-box { transform: rotate(10deg) scale(1.1); }
 
-        /* PALETA PROFISSIONAL */
+        /* CORES PROFISSIONAIS */
         .bg-blue{ background:#eff6ff; color:#2563eb; }
         .bg-red{ background:#fef2f2; color:#dc2626; }
         .bg-green{ background:#f0fdf4; color:#16a34a; }
         .bg-orange{ background:#fff7ed; color:#ea580c; }
         .bg-purple{ background:#faf5ff; color:#9333ea; }
 
-        .card h3{ 
-            color: #0f172a;
-            margin-bottom: 12px; 
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        
-        .card p{ 
-            font-size: 0.95rem; 
-            color: #64748b; 
-            text-align: center; 
-            margin-bottom: 24px; 
-            flex-grow: 1;
-        }
+        .card h3{ color: #0f172a; margin-bottom: 12px; font-size: 1.3rem; }
+        .card p{ font-size: 0.95rem; color: #64748b; text-align: center; margin-bottom: 25px; flex-grow: 1; }
 
         .btn{
             width: 100%;
@@ -136,38 +107,34 @@
             border-radius: 12px;
             text-align: center;
             font-weight: 600;
-            font-size: 0.875rem;
-            transition: background 0.3s ease;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-        .card:hover .btn { background: #4f46e5; }
+        .card:hover .btn { background: #4338ca; }
 
-        /* CELULAR */
         @media(max-width:768px){
-            h1{ font-size: 2.5rem; }
-            .hero-header { height: 360px; }
-            .container { margin-top: -60px; }
+            h1{ font-size: 2.8rem; }
+            .subtitle { font-size: 1.2rem; }
+            .hero-header { height: 380px; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero-header">
-        <img src="foto.fabio1.jpg" alt="Foto de Perfil Fábio" class="profile-avatar">
         <h1>Fábio &#128104;&#8205;&#128187;</h1>
         <p class="subtitle">IT Student & Aspiring Web Developer</p>
     </header>
 
     <div class="container">
         <div class="card-area">
-            <!-- Link Resume -->
             <a href="resume.pdf" target="_blank" class="card">
                 <div class="icon-box bg-blue">📄</div>
                 <h3>Resume</h3>
-                <p>Academic background and professional experience.</p>
-                <div class="btn">View PDF</div>
+                <p>Academic background and professional skills.</p>
+                <div class="btn">View Resume</div>
             </a>
 
-            <!-- Link Org Tool -->
             <a href="structure.html" class="card">
                 <div class="icon-box bg-red">🏢</div>
                 <h3>Org Tool</h3>
@@ -175,7 +142,6 @@
                 <div class="btn">Launch Tool</div>
             </a>
 
-            <!-- Link Finance -->
             <a href="finance.html" class="card">
                 <div class="icon-box bg-green">💰</div>
                 <h3>Finance</h3>
@@ -183,26 +149,25 @@
                 <div class="btn">Open App</div>
             </a>
 
-            <!-- Link Malta -->
             <a href="malta.html" class="card">
                 <div class="icon-box bg-orange">🇲🇹</div>
                 <h3>Malta Guide</h3>
-                <p>Full travel guide and tourism experiences.</p>
+                <p>Full travel guide and tourism tips.</p>
                 <div class="btn">Explore Guide</div>
             </a>
 
-            <!-- Link Converter -->
             <a href="converter.html" class="card">
                 <div class="icon-box bg-purple">💱</div>
                 <h3>Converter</h3>
                 <p>Quick currency conversion (EUR to BRL).</p>
-                <div class="btn">Use Converter</div>
+                <div class="btn">Use Tool</div>
             </a>
         </div>
     </div>
 
 </body>
 </html>
+
 
 
          
