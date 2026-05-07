@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Web Developer Portfolio</title>
     
-    <!-- Favicon (Ícone da aba) - Bandeira de Malta -->
+    <!-- Ícone da aba (Bandeira de Malta) -->
     <link rel="icon" href="https://cloudflare.com">
 
     <style>
         body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; min-height: 100vh; }
-        
         .container { padding: 40px 20px; }
 
-        /* Estilo da Foto de Perfil */
+        /* Estilo da Foto de Perfil Redonda */
         .profile-img { 
             width: 150px; 
             height: 150px; 
@@ -32,26 +31,18 @@
             background: white; color: #333; padding: 25px; border-radius: 15px; width: 220px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.3s ease; 
             display: flex; flex-direction: column; align-items: center; 
-            text-decoration: none; /* Remove sublinhado se o card for link */
+            text-decoration: none;
         }
-
-        /* Efeito de subida nos cards */
-        .card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            cursor: pointer;
-        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); cursor: pointer; }
 
         .icon-box { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-size: 25px; }
-        
         .bg-blue { background: #e3f2fd; color: #1976d2; }
-        .bg-green { background: #e8f5e9; color: #2e7d32; }
-        .bg-purple { background: #f3e5f5; color: #7b1fa2; }
-        .bg-orange { background: #fff3e0; color: #f57c00; }
         .bg-red { background: #ffebee; color: #c62828; }
+        .bg-green { background: #e8f5e9; color: #2e7d32; }
+        .bg-orange { background: #fff3e0; color: #f57c00; }
+        .bg-purple { background: #f3e5f5; color: #7b1fa2; }
 
         .btn { display: inline-block; background: #764ba2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; margin-top: auto; font-weight: bold; font-size: 14px; }
-        
         h1 { font-size: 2.8rem; margin: 10px 0; }
         .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
     </style>
@@ -59,14 +50,13 @@
 <body>
 
 <div class="container">
-    <!-- Sua Foto (Certifique-se que o nome no GitHub é exatamente este) -->
-    <img src="IT student.jpg" alt="Fábio" class="profile-img">
+    <!-- FOTO DE PERFIL (Referenciando o arquivo perfil.jpg) -->
+    <img src="perfil.jpg" alt="Fábio" class="profile-img">
 
     <h1>Fábio 👨‍💻</h1>
     <p class="subtitle">IT Student & Aspiring Web Developer</p>
 
     <div class="card-area">
-        <!-- Card 1: Resume -->
         <div class="card">
             <div class="icon-box bg-blue">📄</div>
             <h3>Resume</h3>
@@ -74,7 +64,6 @@
             <a href="resume.pdf" target="_blank" class="btn">Open PDF</a>
         </div>
 
-        <!-- Card 2: Org Tool -->
         <div class="card">
             <div class="icon-box bg-red">🏢</div>
             <h3>Org Tool</h3>
@@ -82,7 +71,6 @@
             <a href="structure.html" class="btn">View Tool</a>
         </div>
 
-        <!-- Card 3: Finance -->
         <div class="card">
             <div class="icon-box bg-green">💰</div>
             <h3>Finance</h3>
@@ -90,7 +78,6 @@
             <a href="finance.html" class="btn">Live Demo</a>
         </div>
 
-        <!-- Card 4: Malta Guide -->
         <div class="card">
             <div class="icon-box bg-orange">🇲🇹</div>
             <h3>Malta Guide</h3>
@@ -98,7 +85,6 @@
             <a href="malta.html" class="btn">View Guide</a>
         </div>
 
-        <!-- Card 5: Converter -->
         <div class="card">
             <div class="icon-box bg-purple">💱</div>
             <h3>Converter</h3>
@@ -110,10 +96,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
 
