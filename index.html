@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Portfolio</title>
-    <!-- Favicon corrigido para a Bandeira de Malta -->
+    <!-- Favicon da Bandeira de Malta -->
     <link rel="icon" href="https://cloudflare.com">
     <style>
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .container { padding: 40px 20px; width: 100%; max-width: 1100px; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid rgba(255, 255, 255, 0.3); margin-bottom: 20px; object-fit: cover; box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: 0.3s; }
-        .profile-img:hover { transform: scale(1.05); border-color: white; }
+        
+        /* AVATAR REALISTA COM INICIAIS (Substituindo a foto que dava erro) */
+        .profile-avatar { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            background: linear-gradient(45deg, #f57c00, #ff9800); 
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); 
+            transition: 0.3s; 
+            cursor: pointer;
+        }
+        .profile-avatar:hover { transform: scale(1.05); border-color: white; }
+
         h1 { font-size: 2.8rem; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
+        
         .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .card { background: white; color: #333; padding: 25px; border-radius: 15px; width: 200px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; text-decoration: none; display: flex; flex-direction: column; align-items: center; }
         .card:hover { transform: translateY(-10px); }
+        
         .icon-box { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 20px; }
         .bg-blue { background: #e3f2fd; color: #1976d2; }
         .bg-red { background: #ffebee; color: #c62828; }
@@ -27,8 +48,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- CHAMADA DA FOTO -->
-        <img src="foto.jpg" alt="Fábio" class="profile-img">
+        <!-- AVATAR MODERNO COM SUAS INICIAIS -->
+        <div class="profile-avatar">FS</div>
+
         <h1>Fábio 👨‍💻</h1>
         <p class="subtitle">IT Student & Aspiring Web Developer</p>
 
