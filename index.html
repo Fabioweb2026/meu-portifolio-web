@@ -9,12 +9,12 @@
         
         body{
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #f8fafc;
+            /* Fundo com mais vida usando um gradiente linear suave */
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
             color:#1e293b;
             min-height:100vh;
         }
 
-        /* CAPA LIMPA E PROFISSIONAL */
         .hero-header {
             width: 100%;
             height: 450px;
@@ -28,6 +28,7 @@
             text-align: center;
             color: white;
             padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .container{
@@ -37,7 +38,6 @@
             padding: 0 20px;
         }
 
-        /* DESTAQUE PARA O NOME E TÍTULO */
         h1{
             font-size: 4rem;
             font-weight: 800;
@@ -45,18 +45,17 @@
             letter-spacing: -0.05em;
         }
 
-        .subtitle{
-            font-size: 1.6rem; /* Aumentado para destacar */
-            color: #6366f1; /* Cor de destaque (índigo moderno) */
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ffffff;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 20px;
+            background: linear-gradient(90deg, #6366f1, #a855f7); /* Gradiente no texto */
+            padding: 8px 25px;
             border-radius: 50px;
-            backdrop-filter: blur(5px);
             display: inline-block;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
 
-        /* GRID DE CARDS */
         .card-area{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -71,46 +70,65 @@
             display:flex;
             flex-direction:column;
             align-items:center;
-            border: 1px solid #e2e8f0;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Detalhe colorido no topo de cada card */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+        }
+        .card:nth-child(1)::before { background: #2563eb; }
+        .card:nth-child(2)::before { background: #dc2626; }
+        .card:nth-child(3)::before { background: #16a34a; }
+        .card:nth-child(4)::before { background: #ea580c; }
+        .card:nth-child(5)::before { background: #9333ea; }
 
         .card:hover{
             transform: translateY(-12px);
-            box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 30px 40px -15px rgba(99, 102, 241, 0.2);
             border-color: #6366f1;
         }
 
         .icon-box{
-            width: 60px; height: 60px;
-            border-radius: 16px;
+            width: 65px; height: 65px;
+            border-radius: 20px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px; font-size: 30px;
+            margin-bottom: 20px; font-size: 32px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
 
-        /* CORES PROFISSIONAIS */
         .bg-blue{ background:#eff6ff; color:#2563eb; }
         .bg-red{ background:#fef2f2; color:#dc2626; }
         .bg-green{ background:#f0fdf4; color:#16a34a; }
         .bg-orange{ background:#fff7ed; color:#ea580c; }
         .bg-purple{ background:#faf5ff; color:#9333ea; }
 
-        .card h3{ color: #0f172a; margin-bottom: 12px; font-size: 1.3rem; }
+        .card h3{ color: #0f172a; margin-bottom: 12px; font-size: 1.35rem; font-weight: 700; }
         .card p{ font-size: 0.95rem; color: #64748b; text-align: center; margin-bottom: 25px; flex-grow: 1; }
 
         .btn{
             width: 100%;
-            background: #6366f1;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             color: white;
-            padding: 12px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 14px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
+            letter-spacing: 0.5px;
             transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
         }
-        .card:hover .btn { background: #4338ca; }
+        .card:hover .btn { 
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            transform: scale(1.02);
+        }
 
         @media(max-width:768px){
             h1{ font-size: 2.8rem; }
@@ -131,36 +149,36 @@
             <a href="resume.pdf" target="_blank" class="card">
                 <div class="icon-box bg-blue">📄</div>
                 <h3>Resume</h3>
-                <p>Academic background and professional skills.</p>
-                <div class="btn">View Resume</div>
+                <p>Curriculum and professional journey.</p>
+                <div class="btn">VIEW RESUME</div>
             </a>
 
             <a href="structure.html" class="card">
                 <div class="icon-box bg-red">🏢</div>
                 <h3>Org Tool</h3>
-                <p>Explore organizational sectors and structures.</p>
-                <div class="btn">Launch Tool</div>
+                <p>Company sectors and structures.</p>
+                <div class="btn">LAUNCH TOOL</div>
             </a>
 
             <a href="finance.html" class="card">
                 <div class="icon-box bg-green">💰</div>
                 <h3>Finance</h3>
-                <p>Financial balance and management project.</p>
-                <div class="btn">Open App</div>
+                <p>Personal finance management app.</p>
+                <div class="btn">OPEN APP</div>
             </a>
 
             <a href="malta.html" class="card">
                 <div class="icon-box bg-orange">🇲🇹</div>
                 <h3>Malta Guide</h3>
-                <p>Full travel guide and tourism tips.</p>
-                <div class="btn">Explore Guide</div>
+                <p>Tourism and study abroad guide.</p>
+                <div class="btn">EXPLORE GUIDE</div>
             </a>
 
             <a href="converter.html" class="card">
                 <div class="icon-box bg-purple">💱</div>
                 <h3>Converter</h3>
-                <p>Quick currency conversion (EUR to BRL).</p>
-                <div class="btn">Use Tool</div>
+                <p>Real-time EUR to BRL converter.</p>
+                <div class="btn">USE TOOL</div>
             </a>
         </div>
     </div>
