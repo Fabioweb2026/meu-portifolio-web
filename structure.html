@@ -1,63 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Org Structure Explorer | Fábio Dev</title>
+    <title>Creator Flow | Org Tool</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; color: #333; }
-        header { background: #1c2e4a; color: white; padding: 30px; text-align: center; }
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        .sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .sector-card { background: white; padding: 20px; border-radius: 10px; border-top: 5px solid #1c2e4a; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .sector-card h3 { margin-top: 0; color: #1c2e4a; }
-        ul { padding-left: 20px; font-size: 0.9rem; line-height: 1.6; }
-        .badge { background: #e8f0fe; color: #1967d2; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
-        .back-link { display: block; text-align: center; margin-top: 40px; color: #1c2e4a; text-decoration: none; font-weight: bold; }
+        body { font-family: 'Segoe UI', sans-serif; background: #888; margin: 0; display: flex; flex-direction: column; align-items: center; color: white; }
+        header { margin: 20px 0; text-align: center; }
+        h1 { color: #f1c40f; margin-bottom: 5px; }
+        .dashboard { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        
+        /* Card Estilo Painel */
+        .panel-card { background: white; color: #333; border-radius: 20px; width: 350px; min-height: 450px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+
+        /* Lista de Funcionários Estilizada */
+        .org-list { flex-grow: 1; overflow-y: auto; text-align: left; }
+        details { background: #f9f9f9; margin-bottom: 10px; padding: 10px; border-radius: 10px; border-left: 5px solid #6c5ce7; }
+        summary { font-weight: bold; cursor: pointer; color: #444; }
+        ul { margin: 10px 0 0; padding-left: 20px; font-size: 0.9rem; color: #666; }
+        li { margin-bottom: 5px; }
+
+        .btn-back { margin-top: 20px; color: white; text-decoration: none; font-weight: bold; background: #6c5ce7; padding: 10px 20px; border-radius: 8px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>🏢 Corporate Structure Explorer</h1>
-    <p>Organizing sectors, roles, and responsibilities</p>
-</header>
+    <header>
+        <h1>Creator Flow 🛠️</h1>
+        <p>"Learning IT: One step at a time."</p>
+    </header>
 
-<div class="container">
-    <div class="sector-grid">
-        <div class="sector-card">
-            <h3>Information Technology</h3>
-            <span class="badge">Technical</span>
-            <ul>
-                <li><strong>Frontend Dev:</strong> UI/UX implementation.</li>
-                <li><strong>Backend Dev:</strong> Database management.</li>
-                <li><strong>Support:</strong> Infrastructure & Security.</li>
-            </ul>
+    <div class="dashboard">
+        <!-- CARD 1: SUBSTITUINDO DAILY GOALS POR ESTRUTURA -->
+        <div class="panel-card">
+            <h2>Estrutura e Funções 🏢</h2>
+            <div class="org-list">
+                <details>
+                    <summary>Carlos Oliveira - Financeiro</summary>
+                    <ul>
+                        <li><strong>Fluxo de Caixa:</strong> Gestão mensal de entradas e saídas.</li>
+                        <li><strong>Compliance:</strong> Conciliação bancária e fiscal.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Maria Souza - Operações</summary>
+                    <ul>
+                        <li><strong>Logística:</strong> Otimização de rotas e prazos.</li>
+                        <li><strong>Estoque:</strong> Gestão de inventário e fornecedores.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Ricardo Santos - RH</summary>
+                    <ul>
+                        <li><strong>Recrutamento:</strong> Seleção e integração de talentos.</li>
+                        <li><strong>Cultura:</strong> Treinamento e clima organizacional.</li>
+                    </ul>
+                </details>
+            </div>
         </div>
 
-        <div class="sector-card" style="border-top-color: #27ae60;">
-            <h3>Human Resources</h3>
-            <span class="badge">Administrative</span>
-            <ul>
-                <li><strong>Recruitment:</strong> Talent acquisition.</li>
-                <li><strong>Onboarding:</strong> New hire integration.</li>
-                <li><strong>Training:</strong> Skill development.</li>
-            </ul>
+        <!-- CARD 2: TECH QUIZ (Como na sua imagem) -->
+        <div class="panel-card">
+            <h2>Tech Quiz 🧠</h2>
+            <p>Score: 0</p>
+            <p><strong>Is HTML a programming language?</strong></p>
+            <button style="background: #2ecc71; color: white; border: none; padding: 15px; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">YES</button>
+            <button style="background: #e74c3c; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer;">NO</button>
         </div>
 
-        <div class="sector-card" style="border-top-color: #f39c12;">
-            <h3>Operations</h3>
-            <span class="badge">Core Business</span>
-            <ul>
-                <li><strong>Coordination:</strong> Process optimization.</li>
-                <li><strong>Logistics:</strong> Supply chain control.</li>
-                <li><strong>Quality:</strong> Standard compliance.</li>
-            </ul>
+        <!-- CARD 3: BUDGET TOOL (Como na sua imagem) -->
+        <div class="panel-card">
+            <h2>Budget Tool 💡</h2>
+            <input type="text" placeholder="Value 1" style="margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="text" placeholder="Value 2" style="margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+            <div style="display: flex; gap: 10px;">
+                <button style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px;">+</button>
+                <button style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px;">x</button>
+            </div>
+            <h1 style="color: #6c5ce7; margin-top: 20px;">0</h1>
         </div>
     </div>
 
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
-</div>
+    <a href="index.html" class="btn-back">Voltar ao Portfólio</a>
 
 </body>
 </html>
+
+
