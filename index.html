@@ -1,189 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábio | Portfolio</title>
+    <title>Fábio | Tech Portfolio</title>
     <style>
         @import url('https://googleapis.com');
-
-        *{ margin:0; padding:0; box-sizing:border-box; }
         
-        body{
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #020617; 
-            color: #f8fafc;
-            min-height: 100vh;
+        *{ margin:0; padding:0; box-sizing:border-box; }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #fdfaf6; /* Creme Sollene */
+            color: #1f2937; /* Grafite Sollene */
+            line-height: 1.6;
         }
 
-        .hero-header {
-            width: 100%;
-            height: 480px;
-            background: linear-gradient(180deg, rgba(2, 6, 23, 0.4) 0%, #020617 100%), 
-                        url('foto.fabio1.jpg') no-repeat center 25%;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        /* HEADER PREMIUM */
+        .hero {
+            padding: 100px 20px;
             text-align: center;
-            padding: 20px;
+            background: #ffffff;
+            border-bottom: 2px solid #b39359;
+            margin-bottom: 60px;
         }
 
-        .container{
-            width: 100%;
+        .hero h1 { 
+            font-size: 64px; 
+            font-weight: 800; 
+            letter-spacing: -3px; 
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .hero p { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            color: #b39359; 
+            font-weight: 800;
+        }
+
+        .container {
             max-width: 1200px;
-            margin: -100px auto 80px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        h1{
-            font-size: 4.5rem;
+        .section-title {
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 15px;
-            color: #ffffff;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .subtitle {
-            font-size: 1.4rem;
-            color: #fff;
-            font-weight: 600;
-            background: linear-gradient(90deg, #6366f1, #d946ef);
-            padding: 10px 30px;
-            border-radius: 12px;
-            display: inline-block;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+        /* GRID DE PROJETOS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e1da;
+            border-radius: 24px;
+            padding: 40px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        /* Destaque para o Sollene */
+        .featured {
+            border: 2px solid #b39359;
+            background: #1f2937;
+            color: #ffffff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(179, 147, 89, 0.15);
+            border-color: #b39359;
+        }
+
+        .project-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 800; }
+        .project-card p { font-size: 14px; color: #64748b; margin-bottom: 25px; flex-grow: 1; }
+        .featured p { color: #94a3b8; }
+
+        .btn-view {
+            font-size: 12px;
+            font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b39359;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .featured .btn-view { color: #ffffff; background: #b39359; padding: 10px 20px; border-radius: 10px; width: fit-content; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 12px;
+            color: #94a3b8;
             letter-spacing: 1px;
         }
 
-        .card-area{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .card{
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 35px 25px;
-            border-radius: 28px;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-        }
-
-        .card:hover{
-            transform: translateY(-15px);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(30, 41, 59, 0.9);
-        }
-
-        .icon-box{
-            width: 70px; height: 70px;
-            border-radius: 22px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px; font-size: 36px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* CORES VIVAS E GLOW NOS CARDS */
-        .card:nth-child(1) .icon-box { color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
-        .card:nth-child(2) .icon-box { color: #ef4444; box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); }
-        .card:nth-child(3) .icon-box { color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
-        .card:nth-child(4) .icon-box { color: #f97316; box-shadow: 0 0 20px rgba(249, 115, 22, 0.2); }
-        .card:nth-child(5) .icon-box { color: #a855f7; box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
-
-        .card h3{ color: #f8fafc; margin-bottom: 12px; font-size: 1.4rem; font-weight: 700; }
-        .card p{ font-size: 0.95rem; color: #94a3b8; text-align: center; margin-bottom: 30px; line-height: 1.6; }
-
-        /* BOTÕES VIVOS */
-        .btn{
-            width: 100%;
-            padding: 14px;
-            border-radius: 16px;
-            text-align: center;
-            font-weight: 800;
-            font-size: 0.85rem;
-            border: 2px solid;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        /* CORES ESPECÍFICAS DOS BOTÕES */
-        .card:nth-child(1) .btn { border-color: #3b82f6; color: #3b82f6; }
-        .card:nth-child(2) .btn { border-color: #ef4444; color: #ef4444; }
-        .card:nth-child(3) .btn { border-color: #22c55e; color: #22c55e; }
-        .card:nth-child(4) .btn { border-color: #f97316; color: #f97316; }
-        .card:nth-child(5) .btn { border-color: #a855f7; color: #a855f7; }
-
-        /* EFEITO DE PREENCHIMENTO NO HOVER */
-        .card:hover .btn { color: #fff; box-shadow: 0 0 15px currentColor; }
-        .card:nth-child(1):hover .btn { background: #3b82f6; }
-        .card:nth-child(2):hover .btn { background: #ef4444; }
-        .card:nth-child(3):hover .btn { background: #22c55e; }
-        .card:nth-child(4):hover .btn { background: #f97316; }
-        .card:nth-child(5):hover .btn { background: #a855f7; }
-
-        @media(max-width:768px){
-            h1{ font-size: 3rem; }
-            .subtitle { font-size: 1rem; padding: 8px 20px; }
-            .hero-header { height: 400px; }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero-header">
+    <header class="hero">
+        <p>IT Student & Aspiring Developer</p>
         <h1>Fábio</h1>
-        <p class="subtitle">IT Student & Aspiring Web Developer</p>
     </header>
 
     <div class="container">
-        <div class="card-area">
-            <a href="resume.pdf" target="_blank" class="card">
-                <div class="icon-box">📄</div>
-                <h3>Resume</h3>
-                <p>Academic background and technical skills explorer.</p>
-                <div class="btn">VIEW RESUME</div>
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="projects-grid">
+            <!-- PROJETO DESTAQUE: SOLLENE GROUP -->
+            <a href="estoque.html" class="project-card featured">
+                <h3>Sollene Group</h3>
+                <p>Premium Logistics & Global Trade terminal with multi-currency management and real-time cargo tracking.</p>
+                <div class="btn-view">Launch Terminal</div>
             </a>
 
-            <a href="structure.html" class="card">
-                <div class="icon-box">🏢</div>
-                <h3>Org Tool</h3>
-                <p>Company sectors and structures management.</p>
-                <div class="btn">LAUNCH TOOL</div>
+            <!-- Outros Projetos -->
+            <a href="resume.pdf" target="_blank" class="project-card">
+                <h3>Professional Resume</h3>
+                <p>Curriculum Vitae detailing my academic background and professional transition into the tech industry.</p>
+                <div class="btn-view">View PDF →</div>
             </a>
 
-            <a href="finance.html" class="card">
-                <div class="icon-box">💰</div>
-                <h3>Finance</h3>
-                <p>Personal wealth and balance application.</p>
-                <div class="btn">OPEN APP</div>
+            <a href="finance.html" class="project-card">
+                <h3>Personal Finance</h3>
+                <p>Financial management tool built to track balances and daily expenses with a clean interface.</p>
+                <div class="btn-view">Open App →</div>
             </a>
 
-            <a href="malta.html" class="card">
-                <div class="icon-box">🇲🇹</div>
+            <a href="malta.html" class="project-card">
                 <h3>Malta Guide</h3>
-                <p>Complete guide for students and tourists.</p>
-                <div class="btn">EXPLORE GUIDE</div>
+                <p>A specialized travel and tourism guide focusing on educational experiences in Malta.</p>
+                <div class="btn-view">Explore Guide →</div>
             </a>
 
-            <a href="converter.html" class="card">
-                <div class="icon-box">💱</div>
-                <h3>Converter</h3>
-                <p>Real-time currency exchange (EUR/BRL).</p>
-                <div class="btn">USE TOOL</div>
+            <a href="converter.html" class="project-card">
+                <h3>Currency Converter</h3>
+                <p>Real-time exchange tool for quick conversions between EUR, BRL and USD.</p>
+                <div class="btn-view">Use Tool →</div>
             </a>
         </div>
     </div>
+
+    <footer>
+        © 2026 FÁBIO — ENGINEERED FOR EXCELLENCE
+    </footer>
 
 </body>
 </html>
