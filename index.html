@@ -1,826 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fábio | Front-End Developer</title>
-
-    <!-- GOOGLE FONT -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <title>Fábio | Tech Portfolio</title>
     <style>
+        @import url('https://googleapis.com');
+        
+        *{ margin:0; padding:0; box-sizing:border-box; }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #fdfaf6; /* Creme Sollene */
+            color: #1f2937; /* Grafite Sollene */
+            line-height: 1.6;
         }
 
-        html{
-            scroll-behavior:smooth;
+        /* HEADER PREMIUM */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: #ffffff;
+            border-bottom: 2px solid #b39359;
+            margin-bottom: 60px;
         }
 
-        body{
-            font-family:'Plus Jakarta Sans', sans-serif;
-            background:#fdfaf6;
-            color:#1f2937;
-            line-height:1.7;
+        .hero h1 { 
+            font-size: 64px; 
+            font-weight: 800; 
+            letter-spacing: -3px; 
+            color: #1f2937;
+            margin-bottom: 10px;
         }
 
-        a{
-            text-decoration:none;
-            color:inherit;
+        .hero p { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            color: #b39359; 
+            font-weight: 800;
         }
 
-        img{
-            max-width:100%;
-            display:block;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .container{
-            max-width:1200px;
-            margin:0 auto;
-            padding:0 20px;
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* =========================
-           NAVBAR
-        ========================== */
-
-        nav{
-            width:100%;
-            padding:24px 0;
-            background:rgba(255,255,255,0.92);
-
-            backdrop-filter:blur(10px);
-
-            border-bottom:1px solid #ece7df;
-
-            position:sticky;
-            top:0;
-            z-index:1000;
+        /* GRID DE PROJETOS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
         }
 
-        .nav-content{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e1da;
+            border-radius: 24px;
+            padding: 40px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
-        .logo{
-            font-size:22px;
-            font-weight:800;
-            letter-spacing:-1px;
+        /* Destaque para o Sollene */
+        .featured {
+            border: 2px solid #b39359;
+            background: #1f2937;
+            color: #ffffff;
         }
 
-        .nav-links{
-            display:flex;
-            gap:35px;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(179, 147, 89, 0.15);
+            border-color: #b39359;
         }
 
-        .nav-links a{
-            font-size:14px;
-            color:#64748b;
-            font-weight:600;
-            transition:.3s;
+        .project-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 800; }
+        .project-card p { font-size: 14px; color: #64748b; margin-bottom: 25px; flex-grow: 1; }
+        .featured p { color: #94a3b8; }
+
+        .btn-view {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b39359;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .nav-links a:hover{
-            color:#b39359;
+        .featured .btn-view { color: #ffffff; background: #b39359; padding: 10px 20px; border-radius: 10px; width: fit-content; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 12px;
+            color: #94a3b8;
+            letter-spacing: 1px;
         }
 
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            padding:80px 0;
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
-
-        .hero-wrapper{
-            display:grid;
-            grid-template-columns:1.1fr 0.9fr;
-            gap:70px;
-            align-items:center;
-        }
-
-        .hero-tag{
-            font-size:13px;
-            text-transform:uppercase;
-            letter-spacing:4px;
-            color:#b39359;
-            font-weight:800;
-            margin-bottom:25px;
-        }
-
-        .hero h1{
-            font-size:74px;
-            line-height:1;
-            letter-spacing:-4px;
-            margin-bottom:25px;
-            font-weight:800;
-        }
-
-        .hero h2{
-            font-size:20px;
-            font-weight:400;
-            color:#64748b;
-            margin-bottom:40px;
-            max-width:650px;
-        }
-
-        .hero-buttons{
-            display:flex;
-            gap:20px;
-            flex-wrap:wrap;
-        }
-
-        .btn{
-            padding:16px 28px;
-            border-radius:14px;
-            font-size:14px;
-            font-weight:700;
-            transition:.3s;
-        }
-
-        .btn-primary{
-            background:#1f2937;
-            color:#ffffff;
-        }
-
-        .btn-primary:hover{
-            transform:translateY(-5px);
-            background:#111827;
-        }
-
-        .btn-secondary{
-            border:1px solid #d6d3d1;
-            background:#ffffff;
-        }
-
-        .btn-secondary:hover{
-            transform:translateY(-5px);
-            border-color:#b39359;
-            color:#b39359;
-        }
-
-        /* HERO IMAGE */
-
-        .hero-image{
-            display:flex;
-            justify-content:center;
-        }
-
-        .hero-image img{
-
-            width:100%;
-            max-width:430px;
-            height:520px;
-
-            object-fit:cover;
-
-            border-radius:30px;
-
-            border:4px solid #ffffff;
-
-            box-shadow:
-            0 25px 50px rgba(0,0,0,0.10),
-            0 10px 30px rgba(179,147,89,0.20);
-
-            transition:.4s ease;
-        }
-
-        .hero-image img:hover{
-            transform:translateY(-8px);
-        }
-
-        /* =========================
-           SECTION TITLE
-        ========================== */
-
-        section{
-            padding:100px 0;
-        }
-
-        .section-title{
-            text-align:center;
-            margin-bottom:70px;
-        }
-
-        .section-title p{
-            color:#b39359;
-            text-transform:uppercase;
-            letter-spacing:3px;
-            font-size:13px;
-            font-weight:800;
-            margin-bottom:10px;
-        }
-
-        .section-title h2{
-            font-size:42px;
-            letter-spacing:-2px;
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about{
-            max-width:850px;
-            margin:0 auto;
-            text-align:center;
-        }
-
-        .about p{
-            color:#64748b;
-            font-size:18px;
-            line-height:2;
-        }
-
-        /* =========================
-           PROJECTS
-        ========================== */
-
-        .projects-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:30px;
-        }
-
-        .project-card{
-
-            background:#ffffff;
-
-            border-radius:28px;
-
-            padding:35px;
-
-            border:1px solid #ece7df;
-
-            box-shadow:
-            0 10px 30px rgba(0,0,0,0.03);
-
-            transition:
-            transform .4s ease,
-            box-shadow .4s ease;
-
-            display:flex;
-            flex-direction:column;
-        }
-
-        .project-card:hover{
-
-            transform:
-            translateY(-12px)
-            scale(1.02);
-
-            box-shadow:
-            0 20px 40px rgba(179,147,89,0.15);
-        }
-
-        .featured{
-            background:#1f2937;
-            color:#ffffff;
-            border:2px solid #b39359;
-        }
-
-        .project-image{
-            width:100%;
-            height:220px;
-            object-fit:cover;
-            border-radius:18px;
-            margin-bottom:25px;
-        }
-
-        .project-card h3{
-            font-size:24px;
-            margin-bottom:15px;
-            font-weight:800;
-        }
-
-        .project-card p{
-            color:#64748b;
-            margin-bottom:25px;
-            flex-grow:1;
-            font-size:15px;
-        }
-
-        .featured p{
-            color:#cbd5e1;
-        }
-
-        /* TAGS */
-
-        .tags{
-            display:flex;
-            gap:10px;
-            flex-wrap:wrap;
-            margin-bottom:25px;
-        }
-
-        .tags span{
-
-            background:#f3f4f6;
-
-            padding:7px 14px;
-
-            border-radius:999px;
-
-            font-size:11px;
-            font-weight:700;
-            color:#475569;
-        }
-
-        .featured .tags span{
-            background:#374151;
-            color:#ffffff;
-        }
-
-        .project-link{
-            font-size:13px;
-            font-weight:800;
-            text-transform:uppercase;
-            letter-spacing:1px;
-            color:#b39359;
-        }
-
-        .featured .project-link{
-            color:#ffffff;
-        }
-
-        /* =========================
-           SKILLS
-        ========================== */
-
-        .skills{
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-        }
-
-        .skill{
-
-            background:#ffffff;
-
-            border:1px solid #ece7df;
-
-            padding:18px 28px;
-
-            border-radius:14px;
-
-            font-weight:700;
-
-            transition:.3s;
-        }
-
-        .skill:hover{
-            transform:translateY(-5px);
-            border-color:#b39359;
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer{
-
-            padding:80px 20px;
-
-            border-top:1px solid #ece7df;
-
-            text-align:center;
-
-            margin-top:80px;
-        }
-
-        .footer-links{
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            margin-bottom:25px;
-            flex-wrap:wrap;
-        }
-
-        .footer-links a{
-            color:#64748b;
-            font-weight:600;
-            transition:.3s;
-        }
-
-        .footer-links a:hover{
-            color:#b39359;
-        }
-
-        footer p{
-            color:#94a3b8;
-            font-size:13px;
-            letter-spacing:1px;
-        }
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media(max-width:900px){
-
-            .hero-wrapper{
-                grid-template-columns:1fr;
-                text-align:center;
-            }
-
-            .hero-content{
-                order:2;
-            }
-
-            .hero-image{
-                order:1;
-            }
-
-            .hero-buttons{
-                justify-content:center;
-            }
-
-            .hero h1{
-                font-size:52px;
-            }
-
-            .hero h2{
-                margin:0 auto 40px;
-            }
-
-        }
-
-        @media(max-width:768px){
-
-            .nav-links{
-                display:none;
-            }
-
-            .hero h1{
-                font-size:42px;
-                letter-spacing:-2px;
-            }
-
-            .hero h2{
-                font-size:17px;
-            }
-
-            .section-title h2{
-                font-size:34px;
-            }
-
-            .project-card{
-                padding:28px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <div class="container nav-content">
-
-            <div class="logo">
-                Fábio.dev
-            </div>
-
-            <div class="nav-links">
-
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-    <!-- HERO -->
-
     <header class="hero">
-
-        <div class="container hero-wrapper">
-
-            <!-- TEXT -->
-
-            <div class="hero-content">
-
-                <p class="hero-tag">
-                    Front-End Developer • UI Enthusiast
-                </p>
-
-                <h1>
-                    Fábio de Andrade Carvalho
-                </h1>
-
-                <h2>
-                    Building elegant and responsive digital experiences
-                    with HTML, CSS and JavaScript.
-                </h2>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects"
-                       class="btn btn-primary">
-
-                        View Projects
-
-                    </a>
-
-                    <a href="resume.pdf"
-                       target="_blank"
-                       class="btn btn-secondary">
-
-                        Download Resume
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- HERO IMAGE -->
-
-            <div class="hero-image">
-
-                <!-- FOTO -->
-
-                <img src="images/fabio.jpg"
-                     alt="Fábio working on laptop">
-
-            </div>
-
-        </div>
-
+        <p>IT Student & Aspiring Developer</p>
+        <h1>Fábio</h1>
     </header>
 
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <p>About Me</p>
-
-                <h2>
-                    Professional Background
-                </h2>
-
-            </div>
-
-            <div class="about">
-
-                <p>
-                    Front-End Developer transitioning from a long
-                    career in education and leadership. Passionate
-                    about building modern, accessible and visually
-                    elegant interfaces with clean UI, responsive
-                    design and user-focused experiences.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <p>Portfolio</p>
-
-                <h2>
-                    Selected Projects
-                </h2>
-
-            </div>
-
-            <div class="projects-grid">
-
-                <!-- SOLLENE -->
-
-                <a href="estoque.html"
-                   class="project-card featured">
-
-                    <img src="images/sollene.jpg"
-                         class="project-image"
-                         alt="Sollene Group">
-
-                    <h3>
-                        Sollene Group
-                    </h3>
-
-                    <p>
-                        Premium logistics and global trade platform
-                        with multi-currency management and modern
-                        dashboard UI.
-                    </p>
-
-                    <div class="tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-
-                    </div>
-
-                    <div class="project-link">
-                        Launch Project →
-                    </div>
-
-                </a>
-
-                <!-- FINANCE -->
-
-                <a href="finance.html"
-                   class="project-card">
-
-                    <img src="images/finance.jpg"
-                         class="project-image"
-                         alt="Finance Dashboard">
-
-                    <h3>
-                        Finance Dashboard
-                    </h3>
-
-                    <p>
-                        Personal finance application for balance
-                        tracking, expense monitoring and financial
-                        organization.
-                    </p>
-
-                    <div class="tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-
-                    </div>
-
-                    <div class="project-link">
-                        Open Dashboard →
-                    </div>
-
-                </a>
-
-                <!-- MALTA -->
-
-                <a href="malta.html"
-                   class="project-card">
-
-                    <img src="images/malta.jpg"
-                         class="project-image"
-                         alt="Malta Journey">
-
-                    <h3>
-                        Malta Journey
-                    </h3>
-
-                    <p>
-                        Modern travel landing page focused on
-                        educational tourism experiences and
-                        international students.
-                    </p>
-
-                    <div class="tags">
-
-                        <span>Responsive</span>
-                        <span>UI Design</span>
-                        <span>CSS</span>
-
-                    </div>
-
-                    <div class="project-link">
-                        Explore Website →
-                    </div>
-
-                </a>
-
-                <!-- CONVERTER -->
-
-                <a href="converter.html"
-                   class="project-card">
-
-                    <img src="images/converter.jpg"
-                         class="project-image"
-                         alt="Currency Converter">
-
-                    <h3>
-                        Currency Converter
-                    </h3>
-
-                    <p>
-                        Exchange rate converter built for quick
-                        and simple currency calculations between
-                        major currencies.
-                    </p>
-
-                    <div class="tags">
-
-                        <span>JavaScript</span>
-                        <span>API</span>
-                        <span>UI</span>
-
-                    </div>
-
-                    <div class="project-link">
-                        Use Tool →
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <p>Technologies</p>
-
-                <h2>
-                    Skills & Tools
-                </h2>
-
-            </div>
-
-            <div class="skills">
-
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">Responsive Design</div>
-                <div class="skill">Git & GitHub</div>
-                <div class="skill">UI Design</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer id="contact">
-
-        <div class="footer-links">
-
-            <a href="#">
-                GitHub
+    <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="projects-grid">
+            <!-- PROJETO DESTAQUE: SOLLENE GROUP -->
+            <a href="estoque.html" class="project-card featured">
+                <h3>Sollene Group</h3>
+                <p>Premium Logistics & Global Trade terminal with multi-currency management and real-time cargo tracking.</p>
+                <div class="btn-view">Launch Terminal</div>
             </a>
 
-            <a href="#">
-                LinkedIn
+            <!-- Outros Projetos -->
+            <a href="resume.pdf" target="_blank" class="project-card">
+                <h3>Professional Resume</h3>
+                <p>Curriculum Vitae detailing my academic background and professional transition into the tech industry.</p>
+                <div class="btn-view">View PDF →</div>
             </a>
 
-            <a href="#">
-                Email
+            <a href="finance.html" class="project-card">
+                <h3>Personal Finance</h3>
+                <p>Financial management tool built to track balances and daily expenses with a clean interface.</p>
+                <div class="btn-view">Open App →</div>
             </a>
 
+            <a href="malta.html" class="project-card">
+                <h3>Malta Guide</h3>
+                <p>A specialized travel and tourism guide focusing on educational experiences in Malta.</p>
+                <div class="btn-view">Explore Guide →</div>
+            </a>
+
+            <a href="converter.html" class="project-card">
+                <h3>Currency Converter</h3>
+                <p>Real-time exchange tool for quick conversions between EUR, BRL and USD.</p>
+                <div class="btn-view">Use Tool →</div>
+            </a>
         </div>
+    </div>
 
-        <p>
-            © 2026 Fábio — Engineered for Excellence
-        </p>
-
+    <footer>
+        © 2026 FÁBIO — ENGINEERED FOR EXCELLENCE
     </footer>
 
 </body>
-
 </html>
 
 
