@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
 
@@ -25,9 +24,13 @@
         }
 
         body{
+
             font-family:'Plus Jakarta Sans', sans-serif;
+
             background:#fdfaf6;
+
             color:#1f2937;
+
             line-height:1.6;
         }
 
@@ -42,118 +45,180 @@
         }
 
         /* =========================
-           HERO
+           HERO COM FOTO GRANDE
         ========================== */
 
         .hero{
 
-            padding:80px 20px 60px;
+            width:100%;
+            min-height:100vh;
+
+            background:#1f2937;
+
+            position:relative;
+
+            overflow:hidden;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        /* FOTO EM TELA */
+
+        .hero-image{
+
+            position:absolute;
+
+            inset:0;
+
+            width:100%;
+            height:100%;
+        }
+
+        .hero-image img{
+
+            width:100%;
+            height:100%;
+
+            object-fit:cover;
+
+            opacity:0.35;
+        }
+
+        /* OVERLAY */
+
+        .overlay{
+
+            position:absolute;
+
+            inset:0;
+
+            background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.75)
+            );
+        }
+
+        /* HERO CONTENT */
+
+        .hero-content{
+
+            position:relative;
+
+            z-index:10;
 
             text-align:center;
 
-            background:#ffffff;
+            padding:20px;
 
-            border-bottom:2px solid #b39359;
-
-            margin-bottom:60px;
+            max-width:900px;
         }
 
-        /* FOTO */
+        .hero-tag{
 
-        .profile-photo{
-
-            width:260px;
-            height:260px;
-
-            object-fit:cover;
-            object-position:center top;
-
-            border-radius:30px;
-
-            border:4px solid #b39359;
-
-            margin:0 auto 30px;
-
-            box-shadow:
-            0 20px 40px rgba(0,0,0,0.10),
-            0 10px 30px rgba(179,147,89,0.20);
-
-            transition:transform 0.4s ease;
-        }
-
-        .profile-photo:hover{
-            transform:translateY(-8px);
-        }
-
-        .hero p{
-
-            font-size:13px;
+            color:#b39359;
 
             text-transform:uppercase;
 
             letter-spacing:4px;
 
-            color:#b39359;
+            font-size:13px;
 
             font-weight:800;
 
-            margin-bottom:15px;
+            margin-bottom:25px;
         }
 
         .hero h1{
 
-            font-size:62px;
+            color:#ffffff;
+
+            font-size:82px;
+
+            line-height:1;
+
+            letter-spacing:-4px;
+
+            margin-bottom:25px;
 
             font-weight:800;
-
-            letter-spacing:-3px;
-
-            margin-bottom:20px;
         }
 
         .hero h2{
 
-            max-width:700px;
+            color:#e2e8f0;
 
-            margin:0 auto;
-
-            font-size:19px;
+            font-size:22px;
 
             font-weight:400;
 
-            color:#64748b;
+            line-height:1.8;
+
+            max-width:750px;
+
+            margin:0 auto 40px;
+        }
+
+        /* BUTTON */
+
+        .hero-button{
+
+            display:inline-block;
+
+            background:#b39359;
+
+            color:#ffffff;
+
+            padding:16px 34px;
+
+            border-radius:14px;
+
+            font-size:14px;
+
+            font-weight:700;
+
+            transition:.3s;
+        }
+
+        .hero-button:hover{
+
+            transform:translateY(-5px);
+
+            background:#9f7f47;
         }
 
         /* =========================
-           CONTAINER
+           CONTENT
         ========================== */
 
         .container{
-            max-width:1200px;
-            margin:0 auto;
-            padding:0 20px;
-        }
 
-        /* =========================
-           SECTION TITLE
-        ========================== */
+            max-width:1200px;
+
+            margin:0 auto;
+
+            padding:100px 20px;
+        }
 
         .section-title{
 
             text-align:center;
 
-            margin-bottom:50px;
+            margin-bottom:60px;
         }
 
         .section-title p{
-
-            font-size:13px;
 
             color:#b39359;
 
             text-transform:uppercase;
 
             letter-spacing:3px;
+
+            font-size:13px;
 
             font-weight:800;
 
@@ -162,16 +227,14 @@
 
         .section-title h2{
 
-            font-size:40px;
+            font-size:42px;
 
             letter-spacing:-2px;
 
             font-weight:800;
         }
 
-        /* =========================
-           PROJECT GRID
-        ========================== */
+        /* GRID */
 
         .projects-grid{
 
@@ -181,32 +244,28 @@
             repeat(auto-fit,minmax(300px,1fr));
 
             gap:30px;
-
-            margin-bottom:80px;
         }
 
-        /* =========================
-           PROJECT CARD
-        ========================== */
+        /* CARD */
 
         .project-card{
 
             background:#ffffff;
 
-            border:1px solid #e5e1da;
-
             border-radius:24px;
 
             padding:35px;
 
-            transition:all 0.4s ease;
+            border:1px solid #e5e1da;
+
+            transition:.4s ease;
+
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.03);
 
             display:flex;
 
             flex-direction:column;
-
-            box-shadow:
-            0 10px 30px rgba(0,0,0,0.03);
         }
 
         .project-card:hover{
@@ -220,8 +279,6 @@
 
             border-color:#b39359;
         }
-
-        /* FEATURED CARD */
 
         .featured{
 
@@ -243,13 +300,13 @@
 
         .project-card p{
 
-            font-size:15px;
-
             color:#64748b;
 
             margin-bottom:25px;
 
             flex-grow:1;
+
+            font-size:15px;
         }
 
         .featured p{
@@ -291,9 +348,9 @@
             color:#ffffff;
         }
 
-        /* BUTTON */
-
         .btn-view{
+
+            color:#b39359;
 
             font-size:12px;
 
@@ -302,26 +359,13 @@
             text-transform:uppercase;
 
             letter-spacing:1px;
-
-            color:#b39359;
         }
 
         .featured .btn-view{
-
             color:#ffffff;
-
-            background:#b39359;
-
-            padding:10px 20px;
-
-            border-radius:10px;
-
-            width:fit-content;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         footer{
 
@@ -329,33 +373,27 @@
 
             padding:60px 20px;
 
-            font-size:11px;
-
             color:#94a3b8;
 
-            letter-spacing:1px;
+            font-size:12px;
 
-            text-transform:uppercase;
+            letter-spacing:1px;
         }
 
-        /* =========================
-           MOBILE
-        ========================== */
+        /* MOBILE */
 
         @media(max-width:768px){
 
             .hero h1{
-                font-size:42px;
+
+                font-size:48px;
+
+                letter-spacing:-2px;
             }
 
             .hero h2{
-                font-size:17px;
-            }
 
-            .profile-photo{
-
-                width:190px;
-                height:190px;
+                font-size:18px;
             }
 
         }
@@ -370,24 +408,44 @@
 
     <header class="hero">
 
-        <!-- FOTO -->
+        <!-- FOTO DE FUNDO -->
 
-        <img src="fotofabio.jpg"
-             alt="Fábio"
-             class="profile-photo">
+        <div class="hero-image">
 
-        <p>
-            Front-End Developer • UI Enthusiast
-        </p>
+            <img src="foto.fabio1.jpg"
+                 alt="Fábio">
 
-        <h1>
-            Fábio de Andrade Carvalho
-        </h1>
+        </div>
 
-        <h2>
-            Building elegant and responsive digital experiences
-            with HTML, CSS and JavaScript.
-        </h2>
+        <!-- ESCURECER FOTO -->
+
+        <div class="overlay"></div>
+
+        <!-- TEXTO -->
+
+        <div class="hero-content">
+
+            <p class="hero-tag">
+                Front-End Developer • UI Enthusiast
+            </p>
+
+            <h1>
+                Fábio de Andrade Carvalho
+            </h1>
+
+            <h2>
+                Building elegant and responsive digital experiences
+                with HTML, CSS and JavaScript.
+            </h2>
+
+            <a href="#projects"
+               class="hero-button">
+
+               View Projects
+
+            </a>
+
+        </div>
 
     </header>
 
@@ -395,13 +453,9 @@
 
     <div class="container">
 
-        <!-- SECTION TITLE -->
-
         <div class="section-title">
 
-            <p>
-                Portfolio
-            </p>
+            <p>Portfolio</p>
 
             <h2>
                 Selected Projects
@@ -436,7 +490,7 @@
                 </div>
 
                 <div class="btn-view">
-                    Launch Terminal
+                    Launch Terminal →
                 </div>
 
             </a>
@@ -452,15 +506,15 @@
                 </h3>
 
                 <p>
-                    Curriculum Vitae detailing my academic background
-                    and career transition into the technology industry.
+                    Curriculum Vitae detailing academic background
+                    and career transition into technology.
                 </p>
 
                 <div class="tags">
 
+                    <span>Professional</span>
                     <span>PDF</span>
                     <span>English</span>
-                    <span>Professional</span>
 
                 </div>
 
@@ -480,8 +534,8 @@
                 </h3>
 
                 <p>
-                    Financial management tool built to track balances
-                    and expenses with a clean modern interface.
+                    Financial management dashboard for tracking
+                    balances and expenses with modern UI.
                 </p>
 
                 <div class="tags">
@@ -508,7 +562,7 @@
                 </h3>
 
                 <p>
-                    Real-time exchange tool for quick conversions
+                    Real-time exchange tool for fast conversions
                     between EUR, BRL and USD currencies.
                 </p>
 
