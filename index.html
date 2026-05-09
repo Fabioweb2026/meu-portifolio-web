@@ -7,46 +7,39 @@
     <style>
         @import url('https://googleapis.com');
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000; color: white; }
-        .hero { width: 100%; height: 95vh; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, #000 100%), url('foto.fabio1.jpg') no-repeat center center; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding-bottom: 80px; }
-        .hero h1 { font-size: clamp(60px, 10vw, 120px); font-weight: 800; letter-spacing: -5px; line-height: 0.8; }
-        .hero p { font-size: 14px; text-transform: uppercase; letter-spacing: 6px; color: #f1c40f; font-weight: 800; margin-top: 20px; }
-        .projects-section { padding: 80px 20px; text-align: center; }
-        .section-title { color: #f1c40f; font-size: 32px; margin-bottom: 50px; font-weight: 800; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .project-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 45px 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.4s ease; backdrop-filter: blur(10px); }
-        .project-card:hover { transform: translateY(-10px); border-color: #f1c40f; }
-        .project-card h3 { font-size: 24px; margin-bottom: 12px; color: #fff; }
-        .project-card p { font-size: 14px; color: #ccc; margin-bottom: 30px; line-height: 1.6; }
-        .btn-project { background-color: #f1c40f; color: #000; padding: 14px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 14px; text-transform: uppercase; }
-        footer { text-align: center; padding: 100px 20px; font-size: 12px; color: #555; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000; color: white; text-align: center; }
+        .hero { width: 100%; height: 80vh; background: linear-gradient(to bottom, rgba(0,0,0,0.1), #000), url('foto.fabio1.jpg') no-repeat center center; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 50px; }
+        .hero h1 { font-size: 80px; font-weight: 800; margin: 0; }
+        .hero p { color: #f1c40f; letter-spacing: 5px; font-weight: 800; }
+        .projects { padding: 50px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+        .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px 20px; text-decoration: none; color: white; transition: 0.3s; }
+        .card:hover { border-color: #f1c40f; transform: translateY(-5px); }
+        .card h3 { color: #f1c40f; margin-bottom: 15px; }
+        .btn { background: #f1c40f; color: #000; padding: 10px 30px; border-radius: 10px; display: inline-block; margin-top: 20px; font-weight: 800; text-decoration: none; }
     </style>
 </head>
 <body>
-    <header class="hero">
+    <div class="hero">
         <h1>Fábio</h1>
         <p>EXPERT SOLUTIONS & MANAGEMENT</p>
-    </header>
-    <section class="projects-section">
-        <h2 class="section-title">Projetos</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Sollene Group</h3>
-                <p>Sistema de estoque com entrada e saída de produtos.</p>
-                <a href="estoque.html" class="btn-project">Ver Projeto</a>
-            </div>
-            <div class="project-card">
-                <h3>Projeto Malta </h3>
-                <p>Galeria de pontos turísticos de Malta com imagens e descrição.</p>
-                <a href="malta.html" class="btn-project">Ver Projeto</a>
-            </div>
-            <div class="project-card">
-                <h3>Currículo PDF</h3>
-                <p>Currículo profissional para vagas de desenvolvedor.</p>
-                <a href="resume.pdf" target="_blank" class="btn-project">Abrir PDF</a>
-            </div>
-        </div>
-    </section>
-    <footer>© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
+    </div>
+    <div class="projects">
+        <a href="estoque.html" class="card">
+            <h3>Sollene Group</h3>
+            <p>Sistema de estoque premium.</p>
+            <div class="btn">Ver Projeto</div>
+        </a>
+        <a href="malta.html" class="card">
+            <h3>Projeto Malta</h3>
+            <p>Galeria da cafeteria Giorgios.</p>
+            <div class="btn">Ver Projeto</div>
+        </a>
+        <a href="resume.pdf" target="_blank" class="card">
+            <h3>Currículo</h3>
+            <p>Trajetória profissional em TI.</p>
+            <div class="btn">Abrir PDF</div>
+        </a>
+    </div>
+    <p style="padding: 50px; color: #444; font-size: 10px;">© 2026 FÁBIO</p>
 </body>
 </html>
