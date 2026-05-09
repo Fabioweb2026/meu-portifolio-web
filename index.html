@@ -13,19 +13,19 @@
     box-sizing: border-box;
 }
 
-/* 🌄 FUNDO COM IMAGEM */
+/* 🌄 FUNDO COM SUA IMAGEM */
 body {
     font-family: Arial, sans-serif;
     background-image: url('foto.fabio1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #1f2937;
+    color: #e5e7eb;
 }
 
-/* 🟡 OVERLAY CREME ELEGANTE */
+/* 🔥 OVERLAY PROFISSIONAL (RECOMENDADO) */
 .overlay {
-    background: rgba(245, 240, 225, 0.90);
+    background: rgba(15, 15, 18, 0.72); /* grafite elegante */
     min-height: 100vh;
     padding-bottom: 60px;
 }
@@ -39,11 +39,11 @@ header {
 header h1 {
     font-size: 42px;
     margin-bottom: 10px;
-    color: #1f2937;
+    color: #ffffff;
 }
 
 header p {
-    color: #6b4f2a;
+    color: #f5c542; /* dourado leve */
     font-size: 16px;
 }
 
@@ -58,7 +58,7 @@ header p {
 h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: #1f2937;
+    color: #f5c542;
 }
 
 /* GRID */
@@ -70,18 +70,18 @@ h2 {
 
 /* CARD */
 .card {
-    background: #ffffff;
-    border: 1px solid #e5dcc8;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: 0.3s;
     text-align: center;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.10);
 }
 
 /* BOTÃO */
@@ -89,8 +89,8 @@ h2 {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 16px;
-    background: #6b4f2a;
-    color: #fff;
+    background: #f5c542;
+    color: #111;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
@@ -98,7 +98,7 @@ h2 {
 }
 
 .card a:hover {
-    background: #8a6638;
+    background: #d4af37;
 }
 
 /* FOOTER */
@@ -106,7 +106,7 @@ footer {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
-    color: #6b4f2a;
+    color: #9ca3af;
     font-size: 13px;
 }
 </style>
@@ -130,7 +130,7 @@ footer {
 
 <div class="grid">
 
-    <!-- SOLLENE GROUP -->
+    <!-- SOLLENE -->
     <div class="card">
         <h3>Sollene Group</h3>
         <p>Sistema de estoque com entrada, saída e controle de produtos.</p>
@@ -151,7 +151,7 @@ footer {
     <!-- CURRICULO -->
     <div class="card">
         <h3>Currículo PDF</h3>
-        <p>Currículo profissional para vagas de desenvolvedor.</p>
+        <p>Currículo profissional pronto para vagas de desenvolvedor.</p>
         <a href="curriculo.pdf" target="_blank">
             Abrir PDF
         </a>
@@ -162,7 +162,7 @@ footer {
 <!-- MALTA -->
 <section style="margin-top:60px;">
     <h2>Projeto Malta 🇲🇹</h2>
-    <p style="text-align:center; color:#6b4f2a;">
+    <p style="text-align:center; color:#9ca3af;">
         Projeto de estudo com imagens e pontos turísticos de Malta.
     </p>
 </section>
