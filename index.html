@@ -4,104 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fábio | Portfólio Web</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6fb;
-    color: #333;
-}
-
-/* HERO */
-.hero {
-    background: linear-gradient(135deg, #003366, #0055aa);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-/* NAV */
-nav {
-    background: #111;
-    text-align: center;
-    padding: 12px;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* SEÇÕES */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* GRID */
-.grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* CARD */
-.card {
-    background: white;
-    width: 280px;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* IMAGEM */
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* BOTÃO */
-button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: none;
-    background: #0055aa;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #003f80;
-}
-
-/* FOOTER */
-footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -117,16 +20,14 @@ footer {
     <a href="#malta">Malta</a>
 </nav>
 
-<!-- SOBRE -->
 <section id="about">
     <h2>Sobre mim</h2>
     <p>
         Professor de idiomas em transição para desenvolvimento web.
-        Focado em HTML, CSS e JavaScript criando interfaces modernas e responsivas.
+        Focado em HTML, CSS e JavaScript.
     </p>
 </section>
 
-<!-- PROJETOS -->
 <section id="projects">
     <h2>Projetos</h2>
 
@@ -134,44 +35,44 @@ footer {
 
         <div class="card">
             <h3>Portfólio Web</h3>
-            <p>Site pessoal criado com HTML e CSS responsivo.</p>
+            <p>Site pessoal responsivo.</p>
         </div>
 
         <div class="card">
-            <h3>Sistema de Estoque</h3>
-            <p>Projeto de controle e organização de produtos.</p>
+            <h3>Sistema Estoque</h3>
+            <p>Controle de produtos simples.</p>
         </div>
 
     </div>
 </section>
 
-<!-- MALTA -->
 <section id="malta">
     <h2>Malta 🇲🇹</h2>
 
     <div class="grid">
 
         <div class="card">
-            <img src="img/malta1.jpg" alt="Blue Lagoon">
+            <img src="img/malta1.jpg">
             <h3>Blue Lagoon</h3>
-            <p>Uma das praias mais bonitas da Europa.</p>
-            <button onclick="alert('Blue Lagoon - Malta 🇲🇹')">Saiba mais</button>
+            <p>Praia famosa de Malta.</p>
+            <button onclick="showInfo('Blue Lagoon')">Saiba mais</button>
         </div>
 
         <div class="card">
-            <img src="img/malta2.jpg" alt="Valletta">
+            <img src="img/malta2.jpg">
             <h3>Valletta</h3>
-            <p>Capital histórica e cultural de Malta.</p>
-            <button onclick="alert('Valletta - Malta 🇲🇹')">Saiba mais</button>
+            <p>Capital histórica de Malta.</p>
+            <button onclick="showInfo('Valletta')">Saiba mais</button>
         </div>
 
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Fábio | Portfólio Profissional</p>
+    <p>© 2026 Fábio | Portfólio Web</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
-
