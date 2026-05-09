@@ -15,26 +15,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: #fff;
 
-    /* 🌄 IMAGEM DE FUNDO */
-    background-image: url('foto.fabio1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-/* 🔳 OVERLAY (ESSENCIAL PARA LEITURA) */
-.overlay {
-    background: rgba(10, 10, 15, 0.78);
-    min-height: 100vh;
-    padding-bottom: 60px;
+    /* 🟡 FUNDO CLARO PROFISSIONAL */
+    background: #f5f3ef;
+    color: #1f2937;
 }
 
 /* HEADER */
 header {
     text-align: center;
     padding: 70px 20px 30px;
+    background: #1f2937;
+    color: #ffffff;
 }
 
 header h1 {
@@ -43,7 +35,7 @@ header h1 {
 }
 
 header p {
-    color: #d6c08a; /* dourado/bege elegante */
+    color: #f5c542;
     font-size: 16px;
 }
 
@@ -58,7 +50,7 @@ header p {
 h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: #d6c08a; /* dourado suave */
+    color: #1f2937;
 }
 
 /* GRID */
@@ -68,20 +60,20 @@ h2 {
     gap: 20px;
 }
 
-/* CARDS GLASS */
+/* CARD */
 .card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(214,192,138,0.25);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 20px;
-    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     transition: 0.3s;
     text-align: center;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    background: rgba(255,255,255,0.12);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* BOTÃO */
@@ -89,8 +81,8 @@ h2 {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 16px;
-    background: #d6c08a; /* bege/dourado */
-    color: #111;
+    background: #1f2937;
+    color: #f5c542;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
@@ -98,13 +90,15 @@ h2 {
 }
 
 .card a:hover {
-    background: #b89a5a;
+    background: #111827;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     margin-top: 50px;
+    padding: 20px;
+    background: #1f2937;
     color: #ccc;
     font-size: 13px;
 }
@@ -114,36 +108,41 @@ footer {
 
 <body>
 
-<div class="overlay">
-
+<!-- HEADER -->
 <header>
     <h1>Fábio de Andrade Carvalho</h1>
     <p>Web Developer | HTML | CSS | JavaScript</p>
 </header>
 
+<!-- CONTEÚDO -->
 <div class="container">
 
 <h2>Projetos</h2>
 
 <div class="grid">
 
+    <!-- SOLLENE -->
     <div class="card">
         <h3>Sollene Group</h3>
-        <p>Sistema de estoque com controle de entrada e saída.</p>
+        <p>Sistema de estoque com entrada, saída e controle de produtos.</p>
         <a href="https://fabioweb2026.github.io/sollene-estoque-system/" target="_blank">
             Ver Projeto
         </a>
     </div>
 
+    <!-- MALTA -->
     <div class="card">
         <h3>Projeto Malta 🇲🇹</h3>
-        <p>Galeria de pontos turísticos de Malta.</p>
-        <a href="#malta">Ver Projeto</a>
+        <p>Galeria de pontos turísticos de Malta com imagens e descrição.</p>
+        <a href="#malta">
+            Ver Projeto
+        </a>
     </div>
 
+    <!-- CURRICULO -->
     <div class="card">
         <h3>Currículo PDF</h3>
-        <p>Currículo profissional para vagas de dev.</p>
+        <p>Currículo profissional pronto para vagas de desenvolvedor.</p>
         <a href="curriculo.pdf" target="_blank">
             Abrir PDF
         </a>
@@ -151,18 +150,20 @@ footer {
 
 </div>
 
-<section id="malta" style="margin-top:60px;">
+<!-- MALTA -->
+<section style="margin-top:60px;">
     <h2>Projeto Malta 🇲🇹</h2>
-    <p style="text-align:center; color:#ccc;">
-        Projeto de estudos com imagens de Malta.
+    <p style="text-align:center; color:#6b7280;">
+        Projeto de estudo com pontos turísticos e imagens de Malta.
     </p>
 </section>
 
+</div>
+
+<!-- FOOTER -->
 <footer>
     © 2026 Fábio de Andrade Carvalho | Portfólio Web
 </footer>
-
-</div>
 
 </body>
 </html>
