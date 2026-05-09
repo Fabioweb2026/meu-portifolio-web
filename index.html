@@ -17,14 +17,16 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
 
-    /* 🔥 BLACK ELEGANTE */
-    background: linear-gradient(135deg, #0a0f1c, #111827, #0b1220);
+    /* 🌄 IMAGEM DE FUNDO */
+    background-image: url('foto.fabio1.jpg');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
-/* OVERLAY SUAVE */
+/* 🔳 OVERLAY (ESSENCIAL PARA LEITURA) */
 .overlay {
-    background: rgba(0,0,0,0.55);
+    background: rgba(10, 10, 15, 0.78);
     min-height: 100vh;
     padding-bottom: 60px;
 }
@@ -41,7 +43,7 @@ header h1 {
 }
 
 header p {
-    color: #f5c542;
+    color: #d6c08a; /* dourado/bege elegante */
     font-size: 16px;
 }
 
@@ -56,7 +58,7 @@ header p {
 h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: #f5c542;
+    color: #d6c08a; /* dourado suave */
 }
 
 /* GRID */
@@ -66,20 +68,20 @@ h2 {
     gap: 20px;
 }
 
-/* CARD GLASS */
+/* CARDS GLASS */
 .card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(214,192,138,0.25);
     border-radius: 16px;
     padding: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     transition: 0.3s;
     text-align: center;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
 }
 
 /* BOTÃO */
@@ -87,7 +89,7 @@ h2 {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 16px;
-    background: #f5c542;
+    background: #d6c08a; /* bege/dourado */
     color: #111;
     font-weight: bold;
     text-decoration: none;
@@ -96,14 +98,14 @@ h2 {
 }
 
 .card a:hover {
-    background: #d4af37;
+    background: #b89a5a;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     margin-top: 50px;
-    color: #aaa;
+    color: #ccc;
     font-size: 13px;
 }
 </style>
@@ -127,7 +129,7 @@ footer {
 
     <div class="card">
         <h3>Sollene Group</h3>
-        <p>Sistema de estoque com entrada, saída e controle de produtos.</p>
+        <p>Sistema de estoque com controle de entrada e saída.</p>
         <a href="https://fabioweb2026.github.io/sollene-estoque-system/" target="_blank">
             Ver Projeto
         </a>
@@ -141,7 +143,7 @@ footer {
 
     <div class="card">
         <h3>Currículo PDF</h3>
-        <p>Currículo profissional para vagas de desenvolvedor.</p>
+        <p>Currículo profissional para vagas de dev.</p>
         <a href="curriculo.pdf" target="_blank">
             Abrir PDF
         </a>
@@ -152,7 +154,7 @@ footer {
 <section id="malta" style="margin-top:60px;">
     <h2>Projeto Malta 🇲🇹</h2>
     <p style="text-align:center; color:#ccc;">
-        Projeto com imagens de pontos turísticos de Malta.
+        Projeto de estudos com imagens de Malta.
     </p>
 </section>
 
