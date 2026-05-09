@@ -1,16 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Teste Portfólio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábio | Portfólio</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #000; 
+            color: white; 
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%; height: 95vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, #000 100%), 
+                        url('foto.fabio1.jpg') no-repeat center center;
+            background-size: cover; 
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+            text-align: center; padding-bottom: 80px;
+        }
+
+        .hero h1 { font-size: clamp(60px, 10vw, 120px); font-weight: 800; letter-spacing: -5px; line-height: 0.8; }
+        .hero p { font-size: 14px; text-transform: uppercase; letter-spacing: 6px; color: #f1c40f; font-weight: 800; margin-top: 20px; }
+
+        /* Projetos Section */
+        .projects-section { padding: 80px 20px; text-align: center; }
+        .section-title { color: #f1c40f; font-size: 32px; margin-bottom: 50px; font-weight: 800; }
+
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 24px; 
+            padding: 45px 25px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover { transform: translateY(-10px); border-color: #f1c40f; }
+
+        .project-card h3 { font-size: 24px; margin-bottom: 12px; color: #fff; }
+        .project-card p { font-size: 14px; color: #ccc; margin-bottom: 30px; line-height: 1.6; }
+
+        .btn-project {
+            background-color: #f1c40f; 
+            color: #000; 
+            padding: 14px 40px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 14px; 
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-project:hover { background-color: #d4ac0d; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 100px 20px; font-size: 12px; color: #555; }
+    </style>
 </head>
 <body>
 
-<h1>Portfólio funcionando</h1>
+    <!-- Topo com sua foto -->
+    <header class="hero">
+        <h1>Fábio</h1>
+        <p>EXPERT SOLUTIONS & MANAGEMENT</p>
+    </header>
 
-<a href="https://fabioweb2026.github.io/sollene-estoque-system/">
-Sollene Group
-</a>
+    <!-- Seção de Projetos -->
+    <section class="projects-section">
+        <h2 class="section-title">Projetos</h2>
+        
+        <div class="projects-grid">
+            
+            <!-- Card 1: Sollene -->
+            <div class="project-card">
+                <h3>Sollene Group</h3>
+                <p>Sistema de estoque com entrada e saída de produtos.</p>
+                <a href="estoque.html" class="btn-project">Ver Projeto</a>
+            </div>
+
+            <!-- Card 2: Malta | Giorgios (Texto corrigido e link ativo) -->
+            <div class="project-card">
+                <h3>Projeto Malta MT</h3>
+                <p>Galeria de pontos turísticos de Malta com imagens e descrição.</p>
+                <a href="malta.html" class="btn-project">Ver Projeto</a>
+            </div>
+
+            <!-- Card 3: Currículo -->
+            <div class="project-card">
+                <h3>Currículo PDF</h3>
+                <p>Currículo profissional para vagas de desenvolvedor.</p>
+                <a href="resume.pdf" target="_blank" class="btn-project">Abrir PDF</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
 
 </body>
 </html>
