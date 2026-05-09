@@ -3,40 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fábio | Portfólio</title>
+
+<title>Fábio | Portfólio Web</title>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-    color: #222;
+    color: #fff;
+    background-image: url('foto.fabio1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* OVERLAY */
+.overlay {
+    background: rgba(0,0,0,0.78);
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 70px 20px 30px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #f5c542;
+    font-size: 16px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* TITLE */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f5c542;
+}
+
+/* GRID CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
     text-align: center;
 }
 
-header {
-    background: #003366;
-    color: white;
-    padding: 40px 20px;
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.12);
 }
 
-section {
-    padding: 30px 20px;
-}
-
-.card {
-    background: white;
-    width: 260px;
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-img {
-    width: 100%;
-    height: auto;
+/* BUTTON */
+.card a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #f5c542;
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
     border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: #d4af37;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #ccc;
+    font-size: 13px;
 }
 </style>
 
@@ -44,37 +112,62 @@ img {
 
 <body>
 
+<div class="overlay">
+
 <header>
     <h1>Fábio de Andrade Carvalho</h1>
-    <p>Portfólio Web - Versão Básica Estável</p>
+    <p>Web Developer | HTML | CSS | JavaScript</p>
 </header>
 
-<section>
-    <h2>Sobre mim</h2>
-    <p>Professor de idiomas em transição para desenvolvimento web.</p>
-</section>
+<div class="container">
 
-<section>
-    <h2>Projetos</h2>
+<h2>Projetos</h2>
 
+<div class="grid">
+
+    <!-- SOLLENE -->
     <div class="card">
-        <h3>Portfólio</h3>
-        <p>Site simples em HTML e CSS.</p>
+        <h3>Sollene Group</h3>
+        <p>Sistema de estoque com entrada, saída e controle de produtos.</p>
+        <a href="https://fabioweb2026.github.io/sollene-estoque-system/" target="_blank">
+            Ver Projeto
+        </a>
     </div>
 
-</section>
-
-<section>
-    <h2>Malta 🇲🇹</h2>
-
+    <!-- MALTA -->
     <div class="card">
-        <img src="img/malta1.jpg" alt="Malta">
-        <h3>Blue Lagoon</h3>
-        <p>Praia famosa de Malta.</p>
+        <h3>Projeto Malta 🇲🇹</h3>
+        <p>Galeria de pontos turísticos de Malta com imagens e descrições.</p>
+        <a href="#malta">
+            Ver Projeto
+        </a>
     </div>
 
+    <!-- CURRICULO -->
+    <div class="card">
+        <h3>Currículo PDF</h3>
+        <p>Currículo profissional pronto para vagas de desenvolvedor.</p>
+        <a href="curriculo.pdf" target="_blank">
+            Abrir PDF
+        </a>
+    </div>
+
+</div>
+
+<!-- MALTA SECTION -->
+<section id="malta" style="margin-top:60px;">
+    <h2>Projeto Malta 🇲🇹</h2>
+
+    <p style="text-align:center; color:#ccc;">
+        Projeto de estudo com imagens e pontos turísticos de Malta.
+    </p>
 </section>
+
+<footer>
+    © 2026 Fábio de Andrade Carvalho | Portfólio Web
+</footer>
+
+</div>
 
 </body>
 </html>
-
