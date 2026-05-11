@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +14,13 @@
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
     url('foto.fabio1.jpg') center/cover no-repeat;
     color: white;
     padding: 40px 20px;
 }
 
+/* TITLE */
 h1 {
     text-align: center;
     color: #b39359;
@@ -32,44 +34,56 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* CARD BASE */
+/* CARD BASE (premium feel) */
 .card {
     width: 350px;
     background: rgba(26,26,26,0.95);
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid rgba(179,147,89,0.3);
-    transition: 0.3s;
+    border: 1px solid rgba(179,147,89,0.25);
+    transition: all 0.35s ease;
+    position: relative;
 }
 
+/* HOVER PREMIUM (Apple/Stripe feel) */
 .card:hover {
-    transform: translateY(-8px);
-    border-color: #b39359;
+    transform: translateY(-10px);
+    border-color: rgba(179,147,89,0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* IMAGEM PADRÃO (TODOS OS CARDS) */
+/* IMAGES */
 .card-img {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    background: #111;
 }
 
+/* DEFAULT IMAGES */
 .card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* 🔧 AJUSTE SOMENTE SOLLENE GROUP (SEM CORTAR LETRAS) */
+/* zoom suave no hover */
+.card:hover .card-img img {
+    transform: scale(1.06);
+}
+
+/* 🔥 SOLLENE FIX PREMIUM (sem cortar texto + sem buraco branco) */
 .card:nth-child(1) .card-img img {
     object-fit: contain;
-    background: #111;
+    background: radial-gradient(circle, #1a1a1a, #0f0f0f);
+    padding: 10px;
 }
 
 /* RESUME */
@@ -85,13 +99,13 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.85;
-    transition: 0.3s;
+    opacity: 0.88;
+    transition: 0.4s ease;
 }
 
 .card:hover .resume-image {
-    opacity: 1;
     transform: scale(1.05);
+    opacity: 1;
 }
 
 /* CONTENT */
@@ -102,15 +116,22 @@ h1 {
 
 .card h3 {
     color: #b39359;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .card p {
     font-size: 14px;
-    color: #ddd;
+    color: #dcdcdc;
 }
 
-/* BOTÃO HOME */
+/* 🔥 DESTAQUE NO MELHOR PROJETO (SOLLENE) */
+.card:nth-child(1) {
+    border: 1px solid rgba(179,147,89,0.6);
+    box-shadow: 0 10px 25px rgba(179,147,89,0.08);
+}
+
+/* HOME BUTTON */
 .home-btn {
     position: fixed;
     top: 15px;
@@ -122,19 +143,29 @@ h1 {
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
-    font-family: Arial, sans-serif;
     transition: 0.3s;
 }
 
 .home-btn:hover {
     background: #8c6d3c;
 }
+
+/* 📱 MOBILE PREMIUM */
+@media (max-width: 768px) {
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 92%;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- BOTÃO HOME -->
 <a class="home-btn" href="https://fabioweb2026.github.io/portifolio-web/">
 ← Home
 </a>
@@ -143,7 +174,7 @@ h1 {
 
 <div class="projects-grid">
 
-    <!-- CARD 1 - SOLLENE (AJUSTADO SOMENTE AQUI) -->
+    <!-- CARD 1 - SOLLENE (PRIORIDADE VISUAL) -->
     <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
 
         <div class="card-img">
