@@ -27,6 +27,7 @@ h1 {
     letter-spacing: 2px;
 }
 
+/* GRID */
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +37,7 @@ h1 {
     margin: auto;
 }
 
+/* CARD */
 .card {
     width: 350px;
     background: rgba(26,26,26,0.95);
@@ -51,8 +53,17 @@ h1 {
     border-color: #b39359;
 }
 
-.card img {
+/* IMAGEM HARMONIZADA */
+.card-img {
     width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
@@ -119,27 +130,40 @@ iframe {
 
     <!-- CARD 1 -->
     <div class="card" onclick="openPage('https://Fabioweb2026.github.io/estoque.html/')">
-        <img src="imagem.Sollene Group.png">
+
+        <div class="card-img">
+            <img src="imagem.Sollene Group.png" alt="Sollene Group">
+        </div>
+
         <div class="card-content">
             <h3>Sollene Group</h3>
             <p>Inventory system</p>
         </div>
+
     </div>
 
-    <!-- CARD 2 -->
+    <!-- CARD 2 (MALTA COM IMAGEM NOVA) -->
     <div class="card" onclick="openPage('https://Fabioweb2026.github.io/malta.html/')">
+
+        <div class="card-img">
+            <img src="malta01.jpg.png" alt="Malta Project">
+        </div>
+
         <div class="card-content">
             <h3>🌍 Malta Project</h3>
             <p>Global business platform</p>
         </div>
+
     </div>
 
     <!-- CARD 3 -->
     <div class="card" onclick="window.open('resume.pdf','_blank')">
+
         <div class="card-content">
             <h3>📄 Resume</h3>
             <p>Professional CV</p>
         </div>
+
     </div>
 
 </div>
