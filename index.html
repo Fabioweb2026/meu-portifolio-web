@@ -6,163 +6,123 @@
     <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* 1. CONFIGURAÇÕES BASE */
+        /* 1. FUNDO DA PÁGINA COM SUA FOTO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #fdfcf0; 
-            color: #1a1a1a; 
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            /* Aplica a sua foto no fundo */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('foto.fabio1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
             padding: 40px 20px;
         }
 
-        /* 2. CONTAINER PRINCIPAL (Lado a Lado) */
-        .main-container {
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #b39359;
+            text-transform: uppercase;
+        }
+
+        /* 2. ORGANIZAÇÃO DOS TRÊS CARDS */
+        .projects-grid {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
             max-width: 1100px;
             width: 100%;
-            gap: 30px;
         }
 
-        /* 3. CARTÃO LATERAL (PERFIL) */
-        .sidebar {
-            width: 300px;
-            background: #1a1a1a;
-            border-radius: 25px;
-            padding: 40px 30px;
-            color: #fff;
-            text-align: center;
-            height: fit-content;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid #b39359;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-
-        .sidebar h1 { font-size: 22px; color: #b39359; margin-bottom: 5px; }
-        .sidebar p { font-size: 13px; color: #888; margin-bottom: 30px; }
-
-        .contact-box {
-            text-align: left;
-            border-top: 1px solid #333;
-            padding-top: 25px;
-        }
-
-        .contact-label { color: #b39359; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .contact-value { color: #fff; font-size: 13px; margin-bottom: 15px; display: block; text-decoration: none; }
-
-        /* 4. ÁREA DE PROJETOS (GRID) */
-        .content { flex: 1; }
-        .content h2 { font-size: 26px; margin-bottom: 30px; }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        /* 5. CARDS DOS PROJETOS */
+        /* 3. ESTILO DOS CARDS */
         .card {
-            background: #fff;
+            background: rgba(26, 26, 26, 0.9); /* Preto translúcido elegante */
+            width: 320px;
+            padding: 35px;
             border-radius: 20px;
-            padding: 25px;
             text-decoration: none;
-            color: inherit;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            transition: 0.3s;
-            border: 1px solid rgba(179, 147, 89, 0.1);
+            color: #fff;
+            border: 1px solid rgba(179, 147, 89, 0.3);
+            transition: 0.4s;
+            text-align: center;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 15px;
+            backdrop-filter: blur(5px); /* Efeito de vidro fosco */
         }
 
-        .card:hover { 
-            transform: translateY(-5px); 
+        .card:hover {
+            transform: translateY(-10px);
             border-color: #b39359;
-            box-shadow: 0 15px 30px rgba(179, 147, 89, 0.15);
+            background: rgba(26, 26, 26, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .card-icon {
-            width: 45px;
-            height: 45px;
-            background: #fdfcf0;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            border: 1px solid #b39359;
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #b39359;
         }
 
-        .card h3 { font-size: 18px; color: #1a1a1a; }
-        .card p { font-size: 13px; color: #666; line-height: 1.5; }
+        .card h3 {
+            font-size: 1.5rem;
+            color: #b39359;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-        /* RESPONSIVIDADE (Celular) */
-        @media (max-width: 850px) {
-            .main-container { flex-direction: column; align-items: center; }
-            .sidebar { width: 100%; }
+        .card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .card { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- BARRA LATERAL -->
-        <aside class="sidebar">
-            <img src="https://github.com" class="profile-img" alt="Fabio">
-            <h1>Fabio Web</h1>
-            <p>Especialista em Sistemas de Inventário</p>
-            
-            <div class="contact-box">
-                <div class="contact-label">E-mail</div>
-                <span class="contact-value">fabio@sollene-group.mt</span>
+    <h1>Meu Portfólio Web</h1>
 
-                <div class="contact-label">Localização</div>
-                <span class="contact-value">Valletta, Malta / Brazil</span>
+    <div class="projects-grid">
+        
+        <!-- CARD 1: SOLLENE GROUP -->
+        <a href="https://github.io" class="card" target="_blank">
+            <div class="card-icon">☕</div>
+            <h3>Sollene Group</h3>
+            <p>Sistema de gerenciamento de estoque internacional com cálculos financeiros automatizados entre Brasil e Malta.</p>
+        </a>
 
-                <div class="contact-label">LinkedIn</div>
-                <a href="#" class="contact-value">://linkedin.com</a>
-            </div>
-        </aside>
+        <!-- CARD 2: MALTA -->
+        <a href="https://github.com" class="card" target="_blank">
+            <div class="card-icon">🌍</div>
+            <h3>Malta</h3>
+            <p>Página institucional focada em expansão de negócios, parcerias europeias e logística global premium.</p>
+        </a>
 
-        <!-- GRID DE PROJETOS -->
-        <main class="content">
-            <h2>Meus Projetos</h2>
-            
-            <div class="projects-grid">
-                
-                <!-- PROJETO 1: SOLLENE GROUP -->
-                <a href="https://github.io" class="card" target="_blank">
-                    <div class="card-icon">☕</div>
-                    <h3>Sollene Group</h3>
-                    <p>Sistema premium de controle de estoque internacional com cálculos automáticos de lucro e conversão de moeda.</p>
-                </a>
+        <!-- CARD 3: RESUMO -->
+        <div class="card">
+            <div class="card-icon">📄</div>
+            <h3>Resumo</h3>
+            <p>Especialista em unir tecnologia e visão de negócios para criar soluções eficientes e de alto padrão visual.</p>
+        </div>
 
-                <!-- PROJETO 2: MALTA PROJECT -->
-                <a href="https://github.com" class="card" target="_blank">
-                    <div class="card-icon">🌍</div>
-                    <h3>Malta Business</h3>
-                    <p>Página institucional focada na expansão da Sollene no mercado europeu e conexões globais.</p>
-                </a>
-
-                <!-- PROJETO 3: BRANDING -->
-                <div class="card">
-                    <div class="card-icon">🎨</div>
-                    <h3>Branding Luxo</h3>
-                    <p>Desenvolvimento de identidades visuais focadas no mercado Premium e de alta sofisticação.</p>
-                </div>
-
-            </div>
-        </main>
     </div>
 
 </body>
 </html>
+
