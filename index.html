@@ -3,64 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sollene Group | Inventory System</title>
+    <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        /* 1. FUNDO E CONFIGURAÇÃO GERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfcf0; color: #1a1a1a; display: flex; flex-direction: column; align-items: center; }
-        .banner-header { width: 100%; height: 9.5cm; margin-top: 0.5cm; background-color: #fdfcf0; overflow: hidden; display: flex; justify-content: center; }
-        .banner-header img { width: 100%; height: 100%; object-fit: contain; display: block; }
-        .nav-top { width: 100%; max-width: 1400px; padding: 15px 20px; }
-        .btn-back { text-decoration: none; color: #b39359; border: 1px solid #b39359; padding: 6px 15px; border-radius: 50px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
-        .main-content { display: flex; width: 100%; max-width: 1400px; gap: 20px; padding: 0 20px 40px; flex: 1; }
-        .sidebar { width: 320px; background-color: #1a1a1a; color: #b39359; padding: 25px; border-radius: 15px; border: 1px solid rgba(179, 147, 89, 0.3); }
-        label { font-size: 9px; text-transform: uppercase; display: block; margin-bottom: 4px; color: #888; }
-        input, select { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #333; font-size: 12px; }
-        .btn-add { width: 100%; padding: 14px; background-color: #b39359; color: #1a1a1a; border: none; font-weight: 800; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
-        .table-container { flex: 1; background: white; border-radius: 15px; overflow-x: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; min-width: 950px; }
-        thead { background-color: #000; color: #b39359; }
-        th, td { padding: 12px; text-align: center; font-size: 11px; border-bottom: 1px solid #f2f2f2; }
-        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; }
-        .dot-green { background-color: #27ae60; }
-        .dot-brown { background-color: #b39359; }
-        .revenue-val { color: #27ae60 !important; font-weight: 800; }
-        .profit-val { color: #b39359 !important; font-weight: 800; }
-        .inv-val { color: #2980b9 !important; font-weight: bold; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Sua foto no fundo com filtro escuro */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('foto.fabio1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #b39359;
+            text-transform: uppercase;
+        }
+
+        /* 2. GRID PARA OS CARDS FICAREM LADO A LADO */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1300px;
+            width: 100%;
+        }
+
+        /* 3. ESTILO DO CARD (PREMIUM) */
+        .card {
+            background: rgba(26, 26, 26, 0.95); 
+            width: 380px; 
+            border-radius: 25px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid rgba(179, 147, 89, 0.3);
+            transition: 0.4s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #b39359;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Banner no topo do card */
+        .card-banner {
+            width: 100%;
+            overflow: hidden;
+        }
+        .card-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Conteúdo do card */
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: #b39359;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .emoji-icon { font-size: 60px; margin: 20px 0; display: block; }
+
+        @media (max-width: 768px) {
+            .card { width: 100%; }
+        }
     </style>
 </head>
-<body onload="loadInventory()">
-    <header class="banner-header"><img src="imagem.Sollene Group.png" alt="Logo"></header>
-    <nav class="nav-top"><a href="index.html" class="btn-back">← Back to Portfolio</a></nav>
-    <main class="main-content">
-        <section class="sidebar">
-            <h2>Register Item</h2>
-            <label>Product</label><input type="text" id="pName" placeholder="Product Name">
-            <label>Unit</label><select id="pUnit"><option>Caixas</option><option>Kg</option></select>
-            <label>In / Out</label><div style="display: flex; gap: 8px;"><input type="number" id="pEntry" placeholder="In"><input type="number" id="pExit" placeholder="Out"></div>
-            <label>Buy Curr & Cost</label><div style="display: flex; gap: 8px;"><select id="pBuyCurr" style="width: 40%;"><option value="BRL">R$</option></select><input type="number" id="pBuyPrice" placeholder="Cost"></div>
-            <label>Sell Curr & Price</label><div style="display: flex; gap: 8px;"><select id="pSellCurr" style="width: 40%;"><option value="EUR">€</option></select><input type="number" id="pSellPrice" placeholder="Price"></div>
-            <button class="btn-add" onclick="addProduct()">Process Trade</button>
-        </section>
-        <section class="table-container">
-            <table>
-                <thead><tr><th>PRODUCT</th><th>UNIT</th><th>STOCK</th><th>COST</th><th>PRICE</th><th>REVENUE</th><th>PROFIT</th><th>INV. VALUE</th><th>ACTION</th></tr></thead>
-                <tbody id="inventoryBody"></tbody>
-            </table>
-        </section>
-    </main>
-    <script>
-        function getSymbol(c) { return c === "BRL" ? "R$" : (c === "USD" ? "$" : "€"); }
-        function saveInventory() { localStorage.setItem("solleneInventoryHTML", document.getElementById('inventoryBody').innerHTML); }
-        function loadInventory() { const s = localStorage.getItem("solleneInventoryHTML"); if (s) document.getElementById('inventoryBody').innerHTML = s; }
-        function addProduct() {
-            const n = document.getElementById('pName').value, ent = Number(document.getElementById('pEntry').value), ex = Number(document.getElementById('pExit').value), bp = Number(document.getElementById('pBuyPrice').value), sp = Number(document.getElementById('pSellPrice').value);
-            if (!n || bp === 0) return alert("Fill Name and Cost");
-            const st = ent - ex, rev = ex * sp, prof = (sp - bp) * ex, inv = st * sp;
-            const row = document.getElementById('inventoryBody').insertRow();
-            row.innerHTML = `<td>${n}</td><td>${document.getElementById('pUnit').value}</td><td>${st}</td><td>${getSymbol(document.getElementById('pBuyCurr').value)} ${bp}</td><td>${getSymbol(document.getElementById('pSellCurr').value)} ${sp}</td><td class="revenue-val"><span class="status-dot dot-green"></span>${rev.toFixed(2)}</td><td class="profit-val"><span class="status-dot dot-brown"></span>${prof.toFixed(2)}</td><td class="inv-val">${inv.toFixed(2)}</td><td><button onclick="this.closest('tr').remove(); saveInventory();">Del</button></td>`;
-            saveInventory();
-        }
-    </script>
+<body>
+
+    <h1>Web Portfolio</h1>
+
+    <div class="projects-grid">
+        
+        <!-- CARD 1: SOLLENE GROUP (ESTOQUE) -->
+        <a href="./estoque.html" class="card">
+            <div class="card-banner">
+                <img src="imagem.Sollene%20Group.png" alt="Sollene Group Banner">
+            </div>
+            <div class="card-content">
+                <h3>Sollene Group</h3>
+                <p>International inventory management system with automated financial calculations.</p>
+            </div>
+        </a>
+
+        <!-- CARD 2: MALTA PROJECT -->
+        <a href="./malta.html" class="card">
+            <div class="card-content">
+               <span class="emoji-icon">🌍</span>
+               <h3>Malta Project</h3>
+               <p>Institutional platform focused on business expansion and premium global logistics.</p>
+            </div>
+        </a>
+
+        <!-- CARD 3: RESUME -->
+        <a href="./resume.pdf" class="card" target="_blank">
+            <div class="card-content">
+                <span class="emoji-icon">📄</span>
+                <h3>Summary</h3>
+                <p>Expert in combining technology and business vision to create efficient solutions.</p>
+            </div>
+        </a>
+
+    </div>
+
 </body>
 </html>
