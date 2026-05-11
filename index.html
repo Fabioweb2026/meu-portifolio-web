@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,6 @@ body {
     padding: 40px 20px;
 }
 
-/* TITLE */
 h1 {
     text-align: center;
     color: #b39359;
@@ -39,26 +37,24 @@ h1 {
     margin: auto;
 }
 
-/* CARD BASE (premium feel) */
+/* CARD BASE */
 .card {
     width: 350px;
     background: rgba(26,26,26,0.95);
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid rgba(179,147,89,0.25);
-    transition: all 0.35s ease;
-    position: relative;
+    border: 1px solid rgba(179,147,89,0.3);
+    transition: 0.35s ease;
 }
 
-/* HOVER PREMIUM (Apple/Stripe feel) */
 .card:hover {
     transform: translateY(-10px);
     border-color: rgba(179,147,89,0.8);
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* IMAGES */
+/* IMAGEM PADRÃO */
 .card-img {
     width: 100%;
     height: 200px;
@@ -66,7 +62,7 @@ h1 {
     background: #111;
 }
 
-/* DEFAULT IMAGES */
+/* OUTROS CARDS */
 .card-img img {
     width: 100%;
     height: 100%;
@@ -74,16 +70,24 @@ h1 {
     transition: transform 0.5s ease;
 }
 
-/* zoom suave no hover */
 .card:hover .card-img img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
-/* 🔥 SOLLENE FIX PREMIUM (sem cortar texto + sem buraco branco) */
+/* 🔥 SOLLENE GROUP HARMONIZADO (SEM CORTAR TEXTO E SEM BURACO) */
+.card:nth-child(1) .card-img {
+    background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+}
+
 .card:nth-child(1) .card-img img {
+    width: 92%;
+    height: 92%;
     object-fit: contain;
-    background: radial-gradient(circle, #1a1a1a, #0f0f0f);
-    padding: 10px;
+    filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.6));
 }
 
 /* RESUME */
@@ -117,18 +121,11 @@ h1 {
 .card h3 {
     color: #b39359;
     margin-bottom: 8px;
-    font-weight: 600;
 }
 
 .card p {
     font-size: 14px;
     color: #dcdcdc;
-}
-
-/* 🔥 DESTAQUE NO MELHOR PROJETO (SOLLENE) */
-.card:nth-child(1) {
-    border: 1px solid rgba(179,147,89,0.6);
-    box-shadow: 0 10px 25px rgba(179,147,89,0.08);
 }
 
 /* HOME BUTTON */
@@ -150,7 +147,7 @@ h1 {
     background: #8c6d3c;
 }
 
-/* 📱 MOBILE PREMIUM */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
     .projects-grid {
         flex-direction: column;
@@ -174,7 +171,7 @@ h1 {
 
 <div class="projects-grid">
 
-    <!-- CARD 1 - SOLLENE (PRIORIDADE VISUAL) -->
+    <!-- CARD 1 - SOLLENE (HARMONIZADO) -->
     <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
 
         <div class="card-img">
