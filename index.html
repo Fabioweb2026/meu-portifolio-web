@@ -3,168 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fabio Web | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Malta Project</title>
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url('foto.fabio1.jpg') center/cover no-repeat;
+    url('malta01.jpeg') center/cover no-repeat;
     color: white;
-    padding: 40px 20px;
+    min-height: 100vh;
 }
 
-h1 {
-    text-align: center;
-    color: #b39359;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* GRID */
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* CARD */
-.card {
-    width: 350px;
-    background: rgba(26,26,26,0.95);
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid rgba(179,147,89,0.3);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #b39359;
-}
-
-/* IMAGEM NORMAL */
-.card-img {
+/* TOP BAR */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* RESUME SIMPLES (SEM FUNDO BRANCO) */
-.resume-preview {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: #111;
+    background: rgba(0,0,0,0.85);
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* IMAGEM DO RESUME */
-.resume-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.85;
+/* BACK BUTTON */
+.back-btn {
+    text-decoration: none;
+    color: white;
+    background: #b39359;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
-.card:hover .resume-image {
-    opacity: 1;
-    transform: scale(1.05);
+.back-btn:hover {
+    background: #8c6d3c;
 }
 
 /* CONTENT */
-.card-content {
-    padding: 20px;
+.container {
+    padding-top: 100px;
+    max-width: 1000px;
+    margin: auto;
     text-align: center;
 }
 
-.card h3 {
-    color: #b39359;
+h1 {
+    font-size: 40px;
     margin-bottom: 10px;
+    color: #b39359;
 }
 
-.card p {
-    font-size: 14px;
+p {
+    font-size: 18px;
     color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* IMAGE SECTION */
+.hero-img {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-img img {
+    width: 100%;
+    display: block;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Web Portfolio</h1>
+<!-- BACK BUTTON FIXO -->
+<div class="top-bar">
+    <a class="back-btn" href="https://fabioweb2026.github.io/portifolio-web/">
+        ← Back to Portfolio
+    </a>
+</div>
 
-<div class="projects-grid">
+<!-- CONTEÚDO -->
+<div class="container">
 
-    <!-- CARD 1 -->
-    <div class="card" onclick="openPage('https://Fabioweb2026.github.io/estoque.html/')">
+    <h1>Malta Project</h1>
+    <p>Global Business Platform</p>
 
-        <div class="card-img">
-            <img src="imagem.Sollene Group.png" alt="Sollene Group">
-        </div>
-
-        <div class="card-content">
-            <h3>Sollene Group</h3>
-            <p>Inventory system</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="card" onclick="openPage('https://Fabioweb2026.github.io/malta.html/')">
-
-        <div class="card-img">
-            <img src="malta01.jpg.png" alt="Malta Project">
-        </div>
-
-        <div class="card-content">
-            <h3>🌍 Malta Project</h3>
-            <p>Global business platform</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 3 RESUME (LIMPO) -->
-    <div class="card" onclick="window.open('resume.pdf','_blank')">
-
-        <div class="resume-preview">
-            <img src="homem-trabalhao-TI.png" class="resume-image" alt="TI Professional">
-        </div>
-
-        <div class="card-content">
-            <h3>📄 Resume</h3>
-            <p>Professional CV</p>
-        </div>
-
+    <div class="hero-img">
+        <img src="malta01.jpeg" alt="Malta Project">
     </div>
 
 </div>
-
-<script>
-function openPage(url){
-    window.open(url, '_blank');
-}
-</script>
 
 </body>
 </html>
