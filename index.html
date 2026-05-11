@@ -53,6 +53,7 @@ h1 {
 
 .card img {
     width: 100%;
+    display: block;
 }
 
 .card-content {
@@ -116,7 +117,8 @@ iframe {
 
 <div class="projects-grid">
 
-    <div class="card" onclick="openPage('estoque.html')">
+    <!-- CARD 1 -->
+    <div class="card" onclick="openPage('https://Fabioweb2026.github.io/estoque.html/')">
         <img src="imagem.Sollene Group.png">
         <div class="card-content">
             <h3>Sollene Group</h3>
@@ -124,13 +126,15 @@ iframe {
         </div>
     </div>
 
-    <div class="card" onclick="openPage('malta.html')">
+    <!-- CARD 2 -->
+    <div class="card" onclick="openPage('https://Fabioweb2026.github.io/malta.html/')">
         <div class="card-content">
             <h3>🌍 Malta Project</h3>
             <p>Global business platform</p>
         </div>
     </div>
 
+    <!-- CARD 3 -->
     <div class="card" onclick="window.open('resume.pdf','_blank')">
         <div class="card-content">
             <h3>📄 Resume</h3>
@@ -140,6 +144,7 @@ iframe {
 
 </div>
 
+<!-- MODAL -->
 <div id="modal">
     <div class="modal-box">
         <span class="close" onclick="closePage()">×</span>
