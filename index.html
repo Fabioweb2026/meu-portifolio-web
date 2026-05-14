@@ -1,281 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fabio Web | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Web Store HTML</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    min-height: 100vh;
+body{
+
+    font-family:'Plus Jakarta Sans',sans-serif;
 
     background:
-    linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
-    url('foto.fabio1.jpg') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.82)),
+    url('sollenegroup.png.png') center/cover no-repeat fixed;
 
-    color: white;
-    padding: 40px 20px;
+    min-height:100vh;
+
+    color:white;
 }
 
-h1 {
-    text-align: center;
-    color: #b39359;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* BACK BUTTON */
+
+.back-btn{
+
+    position:fixed;
+
+    top:25px;
+    left:25px;
+
+    z-index:9999;
+
+    padding:14px 28px;
+
+    border:1px solid #b39359;
+    border-radius:16px;
+
+    background:rgba(0,0,0,0.78);
+
+    color:#b39359;
+
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.35);
+
 }
 
-/* GRID */
+.back-btn:hover{
 
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 22px;
-    max-width: 1200px;
-    margin: auto;
+    background:#b39359;
+    color:#111;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 30px rgba(179,147,89,0.35);
+
+}
+
+/* HERO */
+
+.hero{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.hero h1{
+
+    font-size:72px;
+    font-weight:700;
+
+    color:#d6b071;
+
+    margin-bottom:18px;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.hero p{
+
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#e4e4e4;
+
+    margin-bottom:35px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.hero-buttons a{
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:0.35s ease;
+}
+
+.btn-gold{
+
+    background:#b39359;
+    color:#111;
+}
+
+.btn-gold:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(179,147,89,0.35);
+}
+
+.btn-outline{
+
+    border:1px solid #b39359;
+
+    color:#d6b071;
+
+    background:rgba(0,0,0,0.55);
+}
+
+.btn-outline:hover{
+
+    background:#b39359;
+    color:#111;
+}
+
+/* COLLECTION */
+
+.collections{
+
+    padding:90px 20px;
+}
+
+.section-title{
+
+    text-align:center;
+
+    color:#d6b071;
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+    letter-spacing:2px;
+}
+
+.collection-grid{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
 }
 
 /* CARD */
 
-.card {
-    width: 350px;
-    background: rgba(26,26,26,0.95);
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
+.card{
 
-    border: 1px solid rgba(179,147,89,0.3);
+    background:rgba(18,18,18,0.92);
 
-    transition: 0.35s ease;
+    border-radius:24px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(179,147,89,0.25);
+
+    transition:0.4s ease;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.card:hover{
 
-    border-color: rgba(179,147,89,0.8);
+    transform:translateY(-10px);
+
+    border-color:#b39359;
 
     box-shadow:
-    0 20px 40px rgba(0,0,0,0.6);
+    0 20px 40px rgba(0,0,0,0.45);
 }
 
-/* IMAGE */
+.card img{
 
-.card-img {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background: #111;
+    width:100%;
+    height:320px;
+
+    object-fit:cover;
 }
 
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.card-content{
 
-    transition: transform 0.5s ease;
+    padding:24px;
 }
 
-.card:hover .card-img img {
-    transform: scale(1.05);
+.card-content h3{
+
+    color:#d6b071;
+
+    margin-bottom:10px;
+
+    font-size:24px;
 }
 
-/* SOLLENE */
+.card-content p{
 
-.card:nth-child(1) .card-img {
-    background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
+    color:#dadada;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height:1.7;
 
-    padding: 14px;
+    margin-bottom:20px;
 }
 
-.card:nth-child(1) .card-img img {
-    width: 92%;
-    height: 92%;
-    object-fit: contain;
+.card-content a{
 
-    filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.6));
-}
+    color:#d6b071;
 
-/* RESUME */
+    text-decoration:none;
 
-.resume-preview {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: #111;
-}
-
-.resume-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    opacity: 0.88;
-
-    transition: 0.4s ease;
-}
-
-.card:hover .resume-image {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-/* CONTENT */
-
-.card-content {
-    padding: 20px;
-    text-align: center;
-}
-
-.card h3 {
-    color: #b39359;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #dcdcdc;
-}
-
-/* HOME BUTTON */
-
-.home-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-
-    z-index: 9999;
-
-    background: #b39359;
-    color: white;
-
-    padding: 10px 16px;
-
-    border-radius: 6px;
-
-    text-decoration: none;
-    font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.home-btn:hover {
-    background: #8c6d3c;
+    font-weight:600;
 }
 
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
+    .hero h1{
+        font-size:42px;
     }
 
-    .card {
-        width: 92%;
+    .hero p{
+        font-size:15px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .back-btn{
+
+        top:15px;
+        left:15px;
+
+        padding:12px 20px;
+
+        font-size:13px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<a class="home-btn"
-href="https://fabioweb2026.github.io/portifolio-web/">
+<!-- BACK BUTTON -->
 
-← Home
+<a href="https://fabioweb2026.github.io/meu-portifolio-web/"
+class="back-btn">
+
+← BACK TO PORTFOLIO
 
 </a>
 
-<h1>Web Portfolio</h1>
+<!-- HERO -->
 
-<div class="projects-grid">
+<section class="hero">
 
-    <!-- CARD 1 -->
+    <h1>Web Store HTML</h1>
 
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
+    <p>
+    Premium fashion experience inspired by luxury minimalism, elegant collections and modern digital presentation.
+    </p>
 
-        <div class="card-img">
-            <img src="sollene-group.jpg" alt="Sollene Group">
+    <div class="hero-buttons">
+
+        <a href="#collections"
+        class="btn-gold">
+
+        Explore Collections
+
+        </a>
+
+        <a href="https://github.com/Fabioweb2026/web-store-html"
+        class="btn-outline">
+
+        GitHub Repository
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- COLLECTIONS -->
+
+<section class="collections" id="collections">
+
+    <h2 class="section-title">
+    Featured Collections
+    </h2>
+
+    <div class="collection-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <img src="mensfashion.jpg"
+            alt="Menswear">
+
+            <div class="card-content">
+
+                <h3>Menswear</h3>
+
+                <p>
+                Elegant modern outfits inspired by premium luxury fashion and timeless masculine aesthetics.
+                </p>
+
+                <a href="#">
+                Explore →
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="card-content">
-            <h3>Sollene Group</h3>
-            <p>Inventory system</p>
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <img src="womensfashion.jpg"
+            alt="Womenswear">
+
+            <div class="card-content">
+
+                <h3>Womenswear</h3>
+
+                <p>
+                Sophisticated feminine styles combining elegance, luxury textures and modern silhouettes.
+                </p>
+
+                <a href="#">
+                Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <img src="luxurycollection.jpg"
+            alt="Luxury Collection">
+
+            <div class="card-content">
+
+                <h3>Luxury Collection</h3>
+
+                <p>
+                Exclusive visual concepts focused on high-end fashion experiences and premium interface design.
+                </p>
+
+                <a href="#">
+                Explore →
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
-    <!-- CARD 2 -->
-
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
-
-        <div class="card-img">
-            <img src="malta01.jpg.png" alt="Malta Project">
-        </div>
-
-        <div class="card-content">
-            <h3>🌍 Malta Project</h3>
-            <p>Global business platform</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-
-    <div class="card"
-    onclick="window.open('resume.pdf','_blank')">
-
-        <div class="resume-preview">
-            <img src="homem-trabalhao-TI.png"
-            class="resume-image"
-            alt="TI Professional">
-        </div>
-
-        <div class="card-content">
-            <h3>📄 Resume</h3>
-            <p>Professional CV</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 4 -->
-
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/web-store-html/')">
-
-        <div class="card-img">
-            <img src="sollenegroup.png.png" alt="Web Store HTML">
-        </div>
-
-        <div class="card-content">
-            <h3>🛍️ Web Store HTML</h3>
-            <p>Luxury fashion store experience</p>
-        </div>
-
-    </div>
-
-</div>
+</section>
 
 </body>
 </html>
