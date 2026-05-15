@@ -73,7 +73,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* 🔥 SOLLENE GROUP (AGORA COM NOVA IMAGEM) */
+/* SOLLENE */
 .card:nth-child(1) .card-img {
     background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
     display: flex;
@@ -148,6 +148,7 @@ h1 {
 
 /* MOBILE */
 @media (max-width: 768px) {
+
     .projects-grid {
         flex-direction: column;
         align-items: center;
@@ -156,6 +157,7 @@ h1 {
     .card {
         width: 92%;
     }
+
 }
 </style>
 </head>
@@ -170,8 +172,9 @@ h1 {
 
 <div class="projects-grid">
 
-    <!-- CARD 1 - SOLLENE (NOVA IMAGEM) -->
-    <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
+    <!-- CARD 1 -->
+    <div class="card"
+    onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
 
         <div class="card-img">
             <img src="sollene-group.jpg" alt="Sollene Group">
@@ -185,7 +188,8 @@ h1 {
     </div>
 
     <!-- CARD 2 -->
-    <div class="card" onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
+    <div class="card"
+    onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
 
         <div class="card-img">
             <img src="malta01.jpg.png" alt="Malta Project">
@@ -199,10 +203,13 @@ h1 {
     </div>
 
     <!-- CARD 3 -->
-    <div class="card" onclick="window.open('resume.pdf','_blank')">
+    <div class="card"
+    onclick="window.open('resume.pdf','_blank')">
 
         <div class="resume-preview">
-            <img src="homem-trabalhao-TI.png" class="resume-image" alt="TI Professional">
+            <img src="homem-trabalhao-TI.png"
+            class="resume-image"
+            alt="TI Professional">
         </div>
 
         <div class="card-content">
@@ -212,8 +219,37 @@ h1 {
 
     </div>
 
+    <!-- CARD 4 - MA.HTML -->
+    <div class="card"
+    onclick="window.open('https://fabioweb2026.github.io/ma.html/')">
+
+        <div class="card-img">
+            <img src="malta01.jpg.png" alt="MA Project">
+        </div>
+
+        <div class="card-content">
+            <h3>✨ MA Project</h3>
+            <p>Modern visual experience</p>
+        </div>
+
+    </div>
+
+    <!-- CARD 5 - WEB STORE HTML -->
+    <div class="card"
+    onclick="window.open('https://fabioweb2026.github.io/web-store-html/')">
+
+        <div class="card-img">
+            <img src="sollenegroup.png.png" alt="Web Store HTML">
+        </div>
+
+        <div class="card-content">
+            <h3>🛍️ Web Store HTML</h3>
+            <p>Luxury fashion store</p>
+        </div>
+
+    </div>
+
 </div>
 
 </body>
 </html>
-
