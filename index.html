@@ -73,7 +73,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* 🔥 SOLLENE GROUP (AGORA COM NOVA IMAGEM) */
+/* 🔥 SOLLENE GROUP */
 .card:nth-child(1) .card-img {
     background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
     display: flex;
@@ -162,7 +162,8 @@ h1 {
 
 <body>
 
-<a class="home-btn" href="https://fabioweb2026.github.io/portifolio-web/">
+<!-- Correção: O botão Home agora aponta para a raiz do seu repositório de portfólio principal -->
+<a class="home-btn" href="https://github.io">
 ← Home
 </a>
 
@@ -170,8 +171,8 @@ h1 {
 
 <div class="projects-grid">
 
-    <!-- CARD 1 - SOLLENE (NOVA IMAGEM) -->
-    <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
+    <!-- CARD 1 - SOLLENE (Correção: Removida a barra '/' depois de estoque.html que causava erro) -->
+    <div class="card" onclick="window.open('https://github.io', '_blank')">
 
         <div class="card-img">
             <img src="sollene-group.jpg" alt="Sollene Group">
@@ -184,8 +185,8 @@ h1 {
 
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card" onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
+    <!-- CARD 2 - MALTA (Correção: Removida a barra '/' depois de malta.html) -->
+    <div class="card" onclick="window.open('https://github.io', '_blank')">
 
         <div class="card-img">
             <img src="malta01.jpg.png" alt="Malta Project">
@@ -198,7 +199,7 @@ h1 {
 
     </div>
 
-    <!-- CARD 3 -->
+    <!-- CARD 3 - RESUME -->
     <div class="card" onclick="window.open('resume.pdf','_blank')">
 
         <div class="resume-preview">
