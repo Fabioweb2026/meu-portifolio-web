@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>iGaming Wallet</title>
-
-    <link rel="stylesheet" href="../assets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGaming Malta - Ledger</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <div class="wallet-card">
+    <!-- Menu de Navegação Global -->
+    <nav class="gaming-nav" style="background: #1a1a2e; padding: 15px; text-align: center; margin-bottom: 20px;">
+        <a href="index.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">🏠 Home Portfólio</a> |
+        <a href="igaming-ledger.html" style="color: #4ecca3; margin: 0 15px; text-decoration: none; font-weight: bold;">📊 Ledger</a> |
+        <a href="lobby.html" style="color: #fff; margin: 0 15px; text-decoration: none;">🎮 Lobby</a> |
+        <a href="wallet.html" style="color: #fff; margin: 0 15px; text-decoration: none;">💰 Wallet</a> |
+        <a href="kyc.html" style="color: #fff; margin: 0 15px; text-decoration: none;">🆔 KYC</a> |
+        <a href="games.html" style="color: #fff; margin: 0 15px; text-decoration: none;">🎰 Games</a> |
+        <a href="admin.html" style="color: #fff; margin: 0 15px; text-decoration: none;">⚙️ Admin</a>
+    </nav>
 
-        <h1>Player Wallet</h1>
+    <div class="ledger-container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1>📊 Histórico de Transações (Ledger)</h1>
+        <p>Empresa operadora sediada em Malta. Registro oficial de transações e auditoria financeira de segurança.</p>
+        
+        <div class="ledger-card">
+            <h3>Filtros de Auditoria</h3>
+            <p>Status do Servidor: <span id="server-status" style="color: #4ecca3;">Online</span></p>
+        </div>
+    </div>
 
-        <p>Player:
-          <div class="wallet-card">
-
-    <h1>Player Wallet</h1>
-
-    <p>Player:
-        <span id="player-name"></span>
-    </p>
-
-    <p>Balance:
-        <span id="wallet-balance"></span>
-    </p>
-
-    <p>Bonus:
-        <span id="bonus-balance"></span>
-    </p>
-
-    <p>KYC:
-        <span id="kyc-status"></span>
-    </p>
-
-    <button onclick="depositMoney()">
-        Deposit €100
-    </button>
-
-</div> 
     <script src="app.js"></script>
-
 </body>
 </html>
+
